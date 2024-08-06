@@ -1,70 +1,33 @@
-# Getting Started with Create React App
+## 프로젝트 소개
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- url
 
-## Available Scripts
+- 소개
+  > 외교부\_국가∙지역별 여행경보 조정 api + open weather api를 활용한 여행 계획시 도움을 줄 수 있는 앱
 
-In the project directory, you can run:
+* 타이틀 작성 (앱 이름)
 
-### `npm start`
+- travel keeper
+  > 번역한 그대로 여행 지키미입니다. 힐링하러 떠나는 여행 안전하게 갈 수 있도록 도움을 주고자 'travel keeper'로 만들게 되었습니다.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* 목적성
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+  > 휴식 겸 힐링으로 떠나는 여행 위험 요소를 사전에 방지하고 기분 좋은 여행이 될 수 있도록 계획을 세우는데 도움이 되고자 했습니다.
+  > 해외 여행 계획 시 가고자하는 나라의 안전사고와 사고 빈번도를 공유함으로써 위험으로부터 사전에 예방을 도울 수 있습니다.
+  > 더불어 날씨앱 보급형 버전으로 계획 중인 나라의 현재 날씨, 날씨 예보를 함께 제공함으로써 계획에 도움이 되고자 했습니다.
 
-### `npm test`
+* 기술 (Stack)
+  js, react, node js, git, github, css
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* 개발 기간
+  2024년 8월 6일~ 8월 16~19일 (총 11일 추후 상황에 따라 +3일 될 수 있음)
 
-### `npm run build`
+* 프로젝트 기획(상세히 적기! 중요!! 스토리가 있으면 좋음)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* 프로젝트하면서 느낀점(제일 중요)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* 개선 방안
+  프로젝트 진행 중 새로 알게 된 내용
+  => ex) 새로 알게 된 내용을 토대로 새로운 프로젝트에 활용을 해볼 예정.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* 프로젝트 진행 중 반성 및 칭찬 사항
