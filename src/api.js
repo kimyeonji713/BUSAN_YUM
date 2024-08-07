@@ -1,7 +1,6 @@
 const fetch = require("node-fetch");
 
-const baseUrl =
-  "https://apis.data.go.kr/1262000/CountrySafetyService5/getCountrySafetyList5";
+const baseUrl = "https://apis.data.go.kr/1262000/";
 
 const ServiceKey =
   "czjc%2FLiXADgQwbo%2BD7wPVIDHrQsrdTly%2FtPY1ISDPgq1b4XfyXD4WryP5J6TNaEsZF9d%2F0%2F10Cto7gia8HcDnA%3D%3D";
@@ -12,4 +11,7 @@ const url = (urlName) => {
   return baseUrl + `${urlName}?ServiceKey=${ServiceKey}&${option}`;
 };
 
-console.log(url);
+export const safeList = () =>
+  fetch(url("CountrySafetyService5/getCountrySafetyList5")).then((res) =>
+    res.json()
+  );
