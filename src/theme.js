@@ -17,7 +17,8 @@ const _theme = extendBaseTheme({
   components,
   config,
   fonts: {
-    heading: "",
+    heading: "Noto Sans KR",
+    body: "Noto Sans KR",
   },
 });
 
