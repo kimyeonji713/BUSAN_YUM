@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import reset from "styled-reset";
 
 export const colors = {
   point_1: "#5BBCFF",
@@ -28,9 +29,10 @@ export const GlobalStyled = createGlobalStyle`
 
 
 body{
-    font-family: "Noto Sans KR", sans-serif;
+    /* font-family: "Noto Sans KR", sans-serif; */
     /* background-color: #252525; */
     /* color: white; */
+    margin: 20px auto;
 }
 
 ul,li{
