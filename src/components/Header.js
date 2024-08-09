@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
 import { routes } from "../routes";
-import { Button } from "@chakra-ui/react";
 import { useRef, useState } from "react";
-import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
-import { colors } from "../Globalstyled";
 import styled from "styled-components";
 import { useForm } from "react-hook-form";
+import { FaHamburger } from "react-icons/fa";
+import { colors } from "../Globalstyled";
 
 const Container = styled.header`
   max-width: 500px;
@@ -21,12 +20,21 @@ const Wrap = styled.div`
     width: 30%;
   }
 `;
-const Ham = styled.div`
-  Button {
-    font-size: 20px;
-    font-weight: 900;
+
+const Button = styled.button`
+  background-color: #fff;
+  border: none;
+  color: ${colors.point_1};
+  font-size: 20px;
+  padding: 5px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.1);
   }
 `;
+
+const Ham = styled.div``;
 
 const Menu = styled.div`
   max-width: 500px;
@@ -63,27 +71,14 @@ export const Header = () => {
         <Link to={routes.home}>
           <img src={imgUrl} alt="logo" />
         </Link>
+        <Button>
+          <FaHamburger />
+        </Button>
 
         <Ham onClick={showHandler}>
-          <Button
-            ref={btnRef}
-            bgColor={"white"}
-            color={colors.point_1}
-            onClick={onOpen}
-          >
-            <HamburgerIcon />
-          </Button>
-
           <Menu $showAct={show ? "block" : "none"}>
             <Link to="">회원이신가요?</Link>
-            <Button
-              ref={btnRef}
-              bgColor={"white"}
-              color={colors.point_1}
-              onClick={closeHandler}
-            >
-              <CloseIcon />
-            </Button>
+
             <form onSubmit={handleSubmit(onSearchResult)}>
               <input
                 {...register("keyword", { required: "검색어를 입력해주세요." })}

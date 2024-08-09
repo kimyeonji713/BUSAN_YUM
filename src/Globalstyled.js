@@ -32,6 +32,8 @@ body{
     /* font-family: "Noto Sans KR", sans-serif; */
     /* background-color: #252525; */
     /* color: white; */
+    max-width: 500px;
+    width: 100%;
     margin: 20px auto;
 }
 

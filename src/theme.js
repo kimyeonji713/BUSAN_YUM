@@ -1,25 +1,25 @@
-import { theme as chakraTheme, extendBaseTheme } from "@chakra-ui/react";
+// import { theme as chakraTheme, extendBaseTheme } from "@chakra-ui/react";
 
-const config = {
-  initialColorMode: "light",
-  useSystemColorMode: false,
-};
+// const config = {
+//   initialColorMode: "light",
+//   useSystemColorMode: false,
+// };
 
-const { Button, Modal, Alert } = chakraTheme.components;
+// const { Button, Modal, Alert } = chakraTheme.components;
 
-const components = {
-  Button,
-  Modal,
-  Alert,
-};
+// const components = {
+//   Button,
+//   Modal,
+//   Alert,
+// };
 
-const _theme = extendBaseTheme({
-  components,
-  config,
-  fonts: {
-    heading: "Noto Sans KR",
-    body: "Noto Sans KR",
-  },
-});
+// const _theme = extendBaseTheme({
+//   components,
+//   config,
+//   fonts: {
+//     heading: "Noto Sans KR",
+//     body: "Noto Sans KR",
+//   },
+// });
 
-export default _theme;
+// export default _theme;
