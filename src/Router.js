@@ -12,7 +12,7 @@ import { Login } from "./pages/Login";
 const Router = () => {
   return (
     <HashRouter>
-      <Header />
+      {/* <Header /> */}
       <Routes>
         <Route path={routes.main} element={<MainPage />} />
         <Route path={routes.home} element={<Home />} />

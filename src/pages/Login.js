@@ -4,15 +4,39 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { routes } from "../routes";
 import styled from "styled-components";
+import { Container } from "../components/Container";
+import { colors } from "../Globalstyled";
 
-const Contaner = styled.div``;
-const Title = styled.div``;
+const Wrap = styled.div`
+  background-color: lightgray;
+`;
+
+const Logo = styled.div`
+  display: flex;
+  justify-content: center;
+
+  img {
+    width: 50%;
+    margin-top: 30px;
+  }
+`;
+const Title = styled.h4`
+  display: flex;
+  justify-content: center;
+  transform: translateY(-30px);
+  color: ${colors.point_1};
+  span {
+    margin-left: 10px;
+    color: ${colors.point_2};
+  }
+`;
 const Form = styled.div``;
 const ErrorMessage = styled.div``;
 const SignUp = styled.div``;
 
 export const Login = () => {
   useScrollTop();
+  const imgUrl = "/img/logo.png";
 
   const {
     register,
@@ -35,37 +59,42 @@ export const Login = () => {
     }
   };
   return (
-    <Contaner>
-      <Title>LOGIN</Title>
+    <Container>
+      <Wrap>
+        <Logo>
+          <img src={imgUrl} alt="logo" />
+        </Logo>
+        <Title>
+          PROTECT YOUR <span>MEMORIES</span>
+        </Title>
 
-      <Form onSumit={handleSubmit(loginHandler)}>
-        <h3>로그인</h3>
+        <Form onSumit={handleSubmit(loginHandler)}>
+          <input
+            {...register("username", {
+              required: "아이디를 입력해주세요.",
+            })}
+            type="text"
+            placeholder="아이디"
+          />
+          <ErrorMessage>{errors?.username?.message}</ErrorMessage>
 
-        <input
-          {...register("username", {
-            required: "아이디를 입력해주세요.",
-          })}
-          type="text"
-          placeholder="아이디"
-        />
-        <ErrorMessage>{errors?.username?.message}</ErrorMessage>
+          <input
+            {...register("password", {
+              required: "패스워드를 입력해주세요.",
+            })}
+            type="text"
+            placeholder="패스워드"
+          />
+          <ErrorMessage>{errors?.password?.message}</ErrorMessage>
 
-        <input
-          {...register("password", {
-            required: "패스워드를 입력해주세요.",
-          })}
-          type="text"
-          placeholder="패스워드"
-        />
-        <ErrorMessage>{errors?.password?.message}</ErrorMessage>
+          <button>로그인</button>
+          <ErrorMessage>{isLogin}</ErrorMessage>
 
-        <button>로그인</button>
-        <ErrorMessage>{isLogin}</ErrorMessage>
-
-        <SignUp>
-          <p>회원이 아니신가요?</p> <Link to={routes.signup}>회원가입</Link>
-        </SignUp>
-      </Form>
-    </Contaner>
+          <SignUp>
+            <p>회원이 아니신가요?</p> <Link to={routes.signup}>회원가입</Link>
+          </SignUp>
+        </Form>
+      </Wrap>
+    </Container>
   );
 };
