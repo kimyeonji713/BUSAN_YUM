@@ -3,4 +3,6 @@ export const routes = {
   detail: "/detail/:id",
   main: "/main/:id",
   search: "/search",
+  login: "/login",
+  signup: "/signup",
 };

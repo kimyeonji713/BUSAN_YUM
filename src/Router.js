@@ -7,6 +7,7 @@ import { Search } from "./pages/search/Search";
 import { PageNotFound } from "./pages/PageNotFound";
 import { Footer } from "./components/Footer";
 import { MainPage } from "./pages/main/MainPage";
+import { Login } from "./pages/Login";
 
 const Router = () => {
   return (
@@ -17,6 +18,9 @@ const Router = () => {
         <Route path={routes.home} element={<Home />} />
         <Route path={routes.detail} element={<Detail />} />
         <Route path={routes.search} element={<Search />} />
+        <Route path={routes.login} element={<Login />} />
+        <Route path={routes.signup} element={<Search />} />
+
         <Route path="/*" element={<PageNotFound />} />
       </Routes>
       <Footer />

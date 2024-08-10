@@ -173,7 +173,7 @@ export const Header = () => {
                 </Top>
                 <Login>
                   <BsPersonCircle />
-                  <Link to="">회원이신가요?</Link>
+                  <Link to={routes.login}>회원이신가요?</Link>
                 </Login>
               </TopWrap>
               <SearchBtn>
