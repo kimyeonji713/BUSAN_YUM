@@ -1,10 +1,8 @@
 import styled from "styled-components";
 import { colors } from "../Globalstyled";
+import { Container } from "./Container";
 
-const Container = styled.footer`
-  /* max-width: 500px;
-  width: 100%;
-  margin: 20px auto; */
+const ConWrap = styled.footer`
   height: 150px;
   border-top: 1px solid ${colors.sub};
   display: flex;
@@ -18,19 +16,24 @@ const Container = styled.footer`
 
 const Git = styled.div`
   display: flex;
+  a {
+    margin-left: 5px;
+  }
 `;
 
 export const Footer = () => {
   return (
     <Container>
-      <p>&copy; KimYeonJI 2024</p>
-      <br />
-      <Git>
-        <p>github:</p>
-        <a href="https://github.com/kimyeonji713">
-          https://github.com/kimyeonji713
-        </a>
-      </Git>
+      <ConWrap>
+        <p>&copy; KimYeonJI 2024</p>
+        <br />
+        <Git>
+          github:
+          <a href="https://github.com/kimyeonji713">
+            https://github.com/kimyeonji713
+          </a>
+        </Git>
+      </ConWrap>
     </Container>
   );
 };

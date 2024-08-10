@@ -6,6 +6,7 @@ export const colors = {
   point_2: "#FDE767",
   sub: "#666",
   backsub: "rgba(0, 0, 0, 0.7)",
+  fontColor: "#fff",
 };
 
 export const spacing = {
@@ -13,6 +14,7 @@ export const spacing = {
   subside: "100px",
   side_1024: "50px",
   moSide: "30px",
+  hamSide: "20px",
 };
 
 export const size = {
@@ -29,12 +31,10 @@ export const GlobalStyled = createGlobalStyle`
 
 
 body{
-    /* font-family: "Noto Sans KR", sans-serif; */
+    font-family: "Noto Sans KR", sans-serif;
     /* background-color: #252525; */
     /* color: white; */
-    max-width: 500px;
-    width: 100%;
-    margin: 20px auto;
+    
 }
 
 ul,li{

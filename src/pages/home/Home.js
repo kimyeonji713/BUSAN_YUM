@@ -19,5 +19,5 @@ export const Home = () => {
   // }, []);
 
   // console.log(safeListData);
-  return <Container>dhioadsf</Container>;
+  return <Container>home</Container>;
 };
