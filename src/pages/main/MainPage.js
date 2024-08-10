@@ -1,3 +1,5 @@
+import { Container } from "../../components/Container";
+
 export const MainPage = () => {
-  return <div>main</div>;
+  return <Container>main</Container>;
 };

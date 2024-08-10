@@ -13,8 +13,8 @@ const Router = () => {
     <HashRouter>
       <Header />
       <Routes>
-        <Route path={routes.home} element={<Home />} />
         <Route path={routes.main} element={<MainPage />} />
+        <Route path={routes.home} element={<Home />} />
         <Route path={routes.detail} element={<Detail />} />
         <Route path={routes.search} element={<Search />} />
         <Route path="/*" element={<PageNotFound />} />

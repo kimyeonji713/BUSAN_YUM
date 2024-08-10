@@ -19,5 +19,5 @@ export const Home = () => {
   // }, []);
 
   // console.log(safeListData);
-  return <Container>home</Container>;
+  return <Container>Home</Container>;
 };
