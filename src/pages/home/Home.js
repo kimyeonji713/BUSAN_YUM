@@ -5,47 +5,16 @@ import { FiSearch } from "react-icons/fi";
 import { routes } from "../../routes";
 import { Link } from "react-router-dom";
 import { colors } from "../../Globalstyled";
-
-const Container = styled.section`
-  max-width: 500px;
-  width: 100%;
-  height: 100vh;
-  margin: 100px auto;
-`;
-const Wrap = styled.div``;
-const Category = styled.div`
-  width: 100%;
-  height: 50px;
-  background-color: lightgray;
-  margin-bottom: 30px;
-`;
-const Search = styled.div`
-  all: unset;
-  width: 90%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px;
-  background-color: ${colors.point_2};
-  border-radius: 15px;
-  font-size: 18px;
-  font-weight: 700;
-  margin: 0px 10px;
-  cursor: pointer;
-  color: ${colors.fontColor_2};
-  a {
-    text-decoration: none;
-    color: ${colors.fontColor_2};
-
-    opacity: 0.7;
-    font-size: 15px;
-    font-weight: 600;
-  }
-`;
-const MainBanner = styled.div``;
-const Notice = styled.div``;
-const GoWrap = styled.div``;
-const KoWrap = styled.div``;
+import {
+  Category,
+  Container,
+  GoWrap,
+  KoWrap,
+  MainBanner,
+  Notice,
+  Search,
+  Wrap,
+} from "./HomeStyle";
 
 export const Home = () => {
   const [safeListData, setSafeListData] = useState();
@@ -72,14 +41,20 @@ export const Home = () => {
           <FiSearch />
         </Search>
         <MainBanner></MainBanner>
-        <Notice></Notice>
+        <Notice>
+          <h3>notice📢</h3>
+        </Notice>
         <GoWrap>
           <h3>어디로 떠나시나요?</h3>
-          <div></div>
+          <div className="img_1"></div>
         </GoWrap>
         <KoWrap>
           <h3>국내는 어떠세요?</h3>
-          <div></div>
+          <div className="img_2">
+            <div className="img_a">1</div>
+            <div className="img_a">2</div>
+            <div className="img_a">3</div>
+          </div>
         </KoWrap>
       </Wrap>
     </Container>
