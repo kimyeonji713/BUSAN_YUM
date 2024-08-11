@@ -6,13 +6,10 @@ import { Search } from "./pages/search/Search";
 import { PageNotFound } from "./pages/PageNotFound";
 import { MainPage } from "./pages/main/MainPage";
 import { Login } from "./pages/Login";
-import { Header } from "./components/Header";
-import { Footer } from "./components/Footer";
 
 const Router = () => {
   return (
     <HashRouter>
-      <Header />
       <Routes>
         <Route path={routes.main} element={<MainPage />} />
         <Route path={routes.home} element={<Home />} />
@@ -22,7 +19,6 @@ const Router = () => {
         <Route path={routes.signup} element={<Search />} />
         <Route path="/*" element={<PageNotFound />} />
       </Routes>
-      <Footer />
     </HashRouter>
   );
 };

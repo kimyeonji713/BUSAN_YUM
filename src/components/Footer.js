@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { colors } from "../Globalstyled";
 import { Container } from "./Container";
+import { Link } from "react-router-dom";
+import { routes } from "../routes";
 
 const ConWrap = styled.footer`
   height: 150px;
@@ -9,15 +11,23 @@ const ConWrap = styled.footer`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 150px;
   text-align: center;
   font-size: 15px;
 `;
 
 const Git = styled.div`
-  display: flex;
+  margin-top: -15px;
   a {
     margin-left: 5px;
+  }
+`;
+
+const GoMAin = styled.div`
+  margin-top: 20px;
+  a {
+    text-decoration: none;
+    font-size: 15px;
+    border-bottom: 1px solid #888;
   }
 `;
 
@@ -33,6 +43,9 @@ export const Footer = () => {
             https://github.com/kimyeonji713
           </a>
         </Git>
+        <GoMAin>
+          <Link to={routes.main}>시작 페이지로 돌아가기</Link>
+        </GoMAin>
       </ConWrap>
     </Container>
   );

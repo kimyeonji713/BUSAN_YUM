@@ -2,19 +2,52 @@ import styled from "styled-components";
 import { colors, spacing } from "../../Globalstyled";
 import { useForm } from "react-hook-form";
 import { FiSearch } from "react-icons/fi";
+import { ErrorMessage } from "../../components/ErrorMessage";
+import { Header } from "../../components/Header";
+import { Footer } from "../../components/Footer";
+
+const Container = styled.div`
+  max-width: 500px;
+  width: 100%;
+  height: 100vh;
+  margin: 20px auto;
+`;
+
+const Wrap = styled.div`
+  width: 100%;
+  height: 100%;
+  padding: 100px 20px;
+`;
 
 const Form = styled.form`
-  margin: 0 ${spacing.moSide};
-  padding: 15px ${spacing.hamSide};
-  border: 1px solid #fff;
+  all: unset;
+  width: 90%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: ${colors.fontColor};
+  padding: 15px;
+  border-bottom: 1px solid ${colors.point_2};
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  color: ${colors.fontColor_2};
+
   input {
     all: unset;
     font-size: 16px;
     font-weight: 600;
+    letter-spacing: -2px;
+  }
+  button {
+    all: unset;
+    margin-left: 200px;
+    color: ${colors.point_2};
+    padding: 5px;
+    &:hover {
+      border-radius: 5px;
+      background-color: rgba(255, 218, 0, 0.5);
+      color: #fff;
+    }
   }
 `;
 export const Search = () => {
@@ -25,15 +58,24 @@ export const Search = () => {
   } = useForm();
   const onSearchResult = () => {};
   return (
-    <Form onSubmit={handleSubmit(onSearchResult)}>
-      <input
-        {...register("keyword", {
-          required: "검색어를 입력해주세요.",
-        })}
-        type="text"
-        placeholder="어떤걸 검색하시나요?"
-      ></input>
-      <FiSearch />
-    </Form>
+    <Container>
+      <Wrap>
+        <Header />
+        <Form onSubmit={handleSubmit(onSearchResult)}>
+          <input
+            {...register("keyword", {
+              required: "검색어를 입력해주세요.",
+            })}
+            type="text"
+            placeholder="어떤걸 검색하시나요?"
+          ></input>
+          <button>
+            <FiSearch />
+          </button>
+          <ErrorMessage></ErrorMessage>
+        </Form>
+      </Wrap>
+      <Footer />
+    </Container>
   );
 };

@@ -35,6 +35,7 @@ const Wrap = styled.div`
   align-items: center;
   img {
     width: 30%;
+    cursor: pointer;
   }
 
   .hamberger {
@@ -59,6 +60,7 @@ const Ham = styled.div`
   position: fixed;
   top: 0;
   right: 0;
+  z-index: 10;
 `;
 
 const Menu = styled.div`

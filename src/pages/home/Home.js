@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import { safeList } from "../../api";
-import styled from "styled-components";
+import { Link } from "react-router-dom";
 import { FiSearch } from "react-icons/fi";
 import { routes } from "../../routes";
-import { Link } from "react-router-dom";
-import { colors } from "../../Globalstyled";
+
 import {
   Category,
   Container,
@@ -15,10 +14,11 @@ import {
   Search,
   Wrap,
 } from "./HomeStyle";
+import { Header } from "../../components/Header";
+import { Footer } from "../../components/Footer";
 
 export const Home = () => {
   const [safeListData, setSafeListData] = useState();
-
   useEffect(() => {
     (async () => {
       try {
@@ -32,8 +32,10 @@ export const Home = () => {
   }, []);
 
   // console.log(safeListData);
+
   return (
     <Container>
+      <Header />
       <Wrap>
         <Category></Category>
         <Search>
@@ -57,6 +59,7 @@ export const Home = () => {
           </div>
         </KoWrap>
       </Wrap>
+      <Footer />
     </Container>
   );
 };
