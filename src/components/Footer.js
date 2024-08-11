@@ -9,7 +9,7 @@ const ConWrap = styled.footer`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 200px;
+  margin-top: 50px;
   text-align: center;
   font-size: 15px;
 `;

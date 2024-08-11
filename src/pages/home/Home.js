@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { safeList } from "../../api";
 import styled from "styled-components";
 import { Container } from "../../components/Container";
+import { Login } from "../Login";
 
 export const Home = () => {
   // const [safeListData, setSafeListData] = useState();
@@ -19,5 +20,9 @@ export const Home = () => {
   // }, []);
 
   // console.log(safeListData);
-  return <Container>Home</Container>;
+  return (
+    <Container>
+      <Login />
+    </Container>
+  );
 };
