@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react";
-import { safeList } from "../../api";
+import { safeList_2 } from "../../api";
 import { Link } from "react-router-dom";
 import { FiSearch } from "react-icons/fi";
 import { routes } from "../../routes";
 
 import {
-  Category,
   Container,
   GoWrap,
   KoWrap,
   MainBanner,
   Notice,
   Search,
+  Text,
   Wrap,
 } from "./HomeStyle";
 import { Header } from "../../components/Header";
@@ -26,7 +26,7 @@ export const Home = () => {
   useEffect(() => {
     (async () => {
       try {
-        const { data: safeData } = await safeList();
+        const { data: safeData } = await safeList_2();
 
         setSafeListData(safeData);
         setIsLoading(false);
@@ -46,17 +46,22 @@ export const Home = () => {
         <Container>
           <Header />
           <Wrap>
-            <Category></Category>
             <Search>
               <Link to={routes.search}>어떤 걸 검색하시나요?</Link>
               <FiSearch />
             </Search>
             <MainBanner></MainBanner>
             <Notice>
-              <h3>notice📢</h3>
+              <Link to={routes.notice}>
+                <h3>Notice📢</h3>
+                {safeListData?.map((data) => (
+                  <Text>{data?.title} ...</Text>
+                ))}
+                <p className="plus">...</p>
+              </Link>
             </Notice>
             <GoWrap>
-              <h3>어디로 떠나시나요?</h3>
+              <h3>해외로 떠나시나요?</h3>
               <div className="img_1"></div>
             </GoWrap>
             <KoWrap>

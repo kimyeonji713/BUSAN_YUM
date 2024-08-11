@@ -8,12 +8,7 @@ export const Container = styled.section`
   margin: 100px auto;
 `;
 export const Wrap = styled.div``;
-export const Category = styled.div`
-  width: 100%;
-  height: 50px;
-  background-color: lightgray;
-  margin-bottom: 50px;
-`;
+
 export const Search = styled.div`
   all: unset;
   width: 90%;
@@ -25,7 +20,7 @@ export const Search = styled.div`
   border-radius: 15px;
   font-size: 18px;
   font-weight: 700;
-  margin: 0px 10px 50px 10px;
+  margin: 120px 10px 60px 10px;
   cursor: pointer;
   color: ${colors.fontColor_2};
   a {
@@ -40,19 +35,40 @@ export const MainBanner = styled.div`
   width: 100%;
   height: 150px;
   background-color: lightgray;
-  margin-bottom: 50px;
+  margin-bottom: 60px;
 `;
 export const Notice = styled.div`
   width: 100%;
-  height: 200px;
+  height: 320px;
   border-top: 1px solid ${colors.fontColor_2};
   border-bottom: 1px solid ${colors.fontColor_2};
-  margin-bottom: 50px;
+  margin-bottom: 60px;
+  font-size: 18px;
+
+  a {
+    text-decoration: none;
+    color: ${colors.point_1};
+  }
+  .plus {
+    margin-left: 20px;
+    color: #555;
+  }
 `;
+
+export const Text = styled.p`
+  padding: 10px 20px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 600;
+  border-bottom: 1px solid #888;
+  color: #555;
+  margin-top: -10px;
+`;
+
 export const GoWrap = styled.div`
   width: 100%;
   height: 150px;
-  margin-bottom: 70px;
+  margin-bottom: 100px;
   h3 {
     margin-bottom: 20px;
   }
@@ -65,7 +81,7 @@ export const GoWrap = styled.div`
 export const KoWrap = styled.div`
   width: 100%;
   height: 150px;
-  margin-bottom: 70px;
+  margin-bottom: 100px;
   h3 {
     margin-bottom: 20px;
   }
@@ -78,7 +94,7 @@ export const KoWrap = styled.div`
     margin-bottom: 70px;
 
     .img_a {
-      width: 33%;
+      width: 32%;
       height: 100%;
       background-color: lightgray;
     }
