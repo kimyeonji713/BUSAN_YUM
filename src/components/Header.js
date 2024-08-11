@@ -1,15 +1,14 @@
 import { Link } from "react-router-dom";
 import { routes } from "../routes";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { FaHamburger } from "react-icons/fa";
 import { colors, spacing } from "../Globalstyled";
-import { Container } from "./Container";
 import { IoClose } from "react-icons/io5";
 import { BsPersonCircle } from "react-icons/bs";
 import { FiSearch } from "react-icons/fi";
 
-const ConWrap = styled.header`
+const Container = styled.header`
   max-width: 500px;
   width: 100%;
   height: 50px;
@@ -18,6 +17,17 @@ const ConWrap = styled.header`
   left: 50%;
   transform: translateX(-50%);
   padding: 10px;
+
+  &.active {
+    padding: 10px;
+    width: 100%;
+
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
 `;
 const Wrap = styled.div`
   display: flex;
@@ -134,6 +144,17 @@ const SearchBtn = styled.button`
 export const Header = () => {
   const [show, setShow] = useState(false);
   const imgUrl = "/img/logo.png";
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  const scrollHandler = () => {
+    setScrollPosition(window.scrollY || document.documentElement.scrollTop);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", scrollHandler);
+
+    setScrollPosition(scrollPosition);
+  });
 
   const showHandler = () => {
     if (!show) {
@@ -147,43 +168,44 @@ export const Header = () => {
   };
 
   return (
-    <Container>
-      <ConWrap>
-        <Wrap onClick={closeHandler}>
-          <Link to={routes.home}>
-            <img src={imgUrl} alt="logo" />
-          </Link>
-          <button className="hamberger" onClick={showHandler}>
-            <FaHamburger />
-          </button>
+    <Container
+      className={scrollPosition < 100 ? " " : "active"}
+      onScroll={scrollHandler}
+    >
+      <Wrap onClick={closeHandler}>
+        <Link to={routes.home}>
+          <img src={imgUrl} alt="logo" />
+        </Link>
+        <button className="hamberger" onClick={showHandler}>
+          <FaHamburger />
+        </button>
 
-          <Ham
-            $BgUrl="https://i.pinimg.com/564x/f4/1c/0b/f41c0b8ab98220f5c2fcf4a76bcf3ced.jpg"
-            $showAct={show ? "block" : "none"}
-          >
-            <Menu>
-              <TopWrap>
-                <Top>
-                  <Link to={routes.home}>
-                    <img src={imgUrl} alt="logo" />
-                  </Link>
-                  <div className="close">
-                    <IoClose />
-                  </div>
-                </Top>
-                <Login>
-                  <BsPersonCircle />
-                  <Link to={routes.login}>회원이신가요?</Link>
-                </Login>
-              </TopWrap>
-              <SearchBtn>
-                <Link to={routes.search}>어떤 걸 검색하시나요?</Link>
-                <FiSearch />
-              </SearchBtn>
-            </Menu>
-          </Ham>
-        </Wrap>
-      </ConWrap>
+        <Ham
+          $BgUrl="https://i.pinimg.com/564x/f4/1c/0b/f41c0b8ab98220f5c2fcf4a76bcf3ced.jpg"
+          $showAct={show ? "block" : "none"}
+        >
+          <Menu>
+            <TopWrap>
+              <Top>
+                <Link to={routes.home}>
+                  <img src={imgUrl} alt="logo" />
+                </Link>
+                <div className="close">
+                  <IoClose />
+                </div>
+              </Top>
+              <Login>
+                <BsPersonCircle />
+                <Link to={routes.login}>회원이신가요?</Link>
+              </Login>
+            </TopWrap>
+            <SearchBtn>
+              <Link to={routes.search}>어떤 걸 검색하시나요?</Link>
+              <FiSearch />
+            </SearchBtn>
+          </Menu>
+        </Ham>
+      </Wrap>
     </Container>
   );
 };

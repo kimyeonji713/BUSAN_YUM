@@ -7,6 +7,7 @@ export const colors = {
   sub: "#666",
   backsub: "rgba(0, 0, 0, 0.7)",
   fontColor: "#fff",
+  fontColor_2: "#888;",
 };
 
 export const spacing = {
@@ -32,7 +33,7 @@ export const GlobalStyled = createGlobalStyle`
 
 body{
     font-family: "Noto Sans KR", sans-serif;
-    /* background-color: #252525; */
+    background-color: #fff;
     /* color: white; */
     
 }

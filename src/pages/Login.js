@@ -71,7 +71,7 @@ const Text = styled.div`
   justify-content: center;
   align-items: center;
   font-size: 14px;
-  color: #888;
+  color: ${colors.fontColor_2};
   a {
     text-decoration: underline;
     opacity: 0.7;
