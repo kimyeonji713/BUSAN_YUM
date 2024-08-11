@@ -36,7 +36,7 @@ export const Home = () => {
     })();
   }, []);
 
-  console.log(safeListData);
+  // console.log(safeListData);
 
   return (
     <>

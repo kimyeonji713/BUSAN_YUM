@@ -61,9 +61,11 @@ const Button = styled.button`
     opacity: 1;
   }
 `;
-export const MainPage = () => {
+export const MainPage = ({ imgData, numData }) => {
   const imgUrl = "/img/logo.png";
   const [isLoading, setIsLoading] = useState(false);
+
+  // const randomData = imgData[0];
   useEffect(() => {
     (async () => {
       try {
@@ -75,12 +77,19 @@ export const MainPage = () => {
     })();
   }, []);
 
+  // console.log(randomData);
+  console.log(imgData[0]);
+
   return (
     <>
       {isLoading ? (
         <Loading />
       ) : (
-        <Container $BgUrl="https://i.pinimg.com/736x/e2/dc/68/e2dc6832ddca8ad95172bb7e444ff1b7.jpg">
+        <Container
+          $BgUrl={
+            "https://i.pinimg.com/736x/e2/dc/68/e2dc6832ddca8ad95172bb7e444ff1b7.jpg"
+          }
+        >
           <Wrap>
             <img src={imgUrl} alt="logo" />
             <Title>
