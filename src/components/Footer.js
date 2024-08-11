@@ -19,6 +19,7 @@ const Git = styled.div`
   margin-top: -15px;
   a {
     margin-left: 5px;
+    cursor: pointer;
   }
 `;
 
@@ -28,6 +29,7 @@ const GoMAin = styled.div`
     text-decoration: none;
     font-size: 15px;
     border-bottom: 1px solid #888;
+    cursor: pointer;
   }
 `;
 

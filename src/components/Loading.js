@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { colors } from "../Globalstyled";
+import { PropagateLoader } from "react-spinners";
 
 const Container = styled.div`
   width: 100%;

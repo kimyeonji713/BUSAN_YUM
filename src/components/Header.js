@@ -17,7 +17,7 @@ const Container = styled.header`
   left: 50%;
   transform: translateX(-50%);
   padding: 10px;
-
+  z-index: 10;
   &.active {
     padding: 10px;
     width: 100%;
@@ -60,7 +60,6 @@ const Ham = styled.div`
   position: fixed;
   top: 0;
   right: 0;
-  z-index: 10;
 `;
 
 const Menu = styled.div`

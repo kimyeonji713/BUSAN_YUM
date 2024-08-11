@@ -2,6 +2,8 @@ import styled from "styled-components";
 import { colors } from "../../Globalstyled";
 import { Link } from "react-router-dom";
 import { routes } from "../../routes";
+import { useEffect, useState } from "react";
+import { Loading } from "../../components/Loading";
 
 const Container = styled.div`
   max-width: 500px;
@@ -61,18 +63,35 @@ const Button = styled.button`
 `;
 export const MainPage = () => {
   const imgUrl = "/img/logo.png";
+  const [isLoading, setIsLoading] = useState(false);
+  useEffect(() => {
+    (async () => {
+      try {
+        setIsLoading(false);
+      } catch (error) {
+        console.log(error);
+        alert("에러 발생");
+      }
+    })();
+  }, []);
 
   return (
-    <Container $BgUrl="https://i.pinimg.com/736x/e2/dc/68/e2dc6832ddca8ad95172bb7e444ff1b7.jpg">
-      <Wrap>
-        <img src={imgUrl} alt="logo" />
-        <Title>
-          PROTECT YOUR <span>MEMORIES</span>
-        </Title>
-        <Button>
-          <Link to={routes.home}>Let's Go</Link>
-        </Button>
-      </Wrap>
-    </Container>
+    <>
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <Container $BgUrl="https://i.pinimg.com/736x/e2/dc/68/e2dc6832ddca8ad95172bb7e444ff1b7.jpg">
+          <Wrap>
+            <img src={imgUrl} alt="logo" />
+            <Title>
+              PROTECT YOUR <span>MEMORIES</span>
+            </Title>
+            <Button>
+              <Link to={routes.home}>Let's Go</Link>
+            </Button>
+          </Wrap>
+        </Container>
+      )}
+    </>
   );
 };
