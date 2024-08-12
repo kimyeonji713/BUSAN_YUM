@@ -13,8 +13,8 @@ const Router = () => {
   return (
     <HashRouter>
       <Routes>
-        <Route path={routes.main} element={<MainPage />} />
-        <Route path={routes.home} element={<Home />} />
+        <Route path={routes.main} element={<Home />} />
+        <Route path={routes.home} element={<MainPage />} />
         <Route path={routes.detail} element={<Detail />} />
         <Route path={routes.search} element={<Search />} />
         <Route path={routes.login} element={<Login />} />

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { routes } from "../../routes";
 import { useEffect, useState } from "react";
 import { Loading } from "../../components/Loading";
+import { mainImg, MainImg } from "../../lib/MainImg";
 
 const Container = styled.div`
   max-width: 500px;
@@ -61,11 +62,11 @@ const Button = styled.button`
     opacity: 1;
   }
 `;
-export const MainPage = ({ imgData, numData }) => {
+export const MainPage = () => {
   const imgUrl = "/img/logo.png";
   const [isLoading, setIsLoading] = useState(false);
 
-  // const randomData = imgData[0];
+  mainImg();
   useEffect(() => {
     (async () => {
       try {
@@ -78,7 +79,7 @@ export const MainPage = ({ imgData, numData }) => {
   }, []);
 
   // console.log(randomData);
-  console.log(imgData[0]);
+  // console.log(imgData[0]);
 
   return (
     <>
@@ -96,7 +97,7 @@ export const MainPage = ({ imgData, numData }) => {
               PROTECT YOUR <span>MEMORIES</span>
             </Title>
             <Button>
-              <Link to={routes.home}>Let's Go</Link>
+              <Link to={routes.main}>Let's Go</Link>
             </Button>
           </Wrap>
         </Container>

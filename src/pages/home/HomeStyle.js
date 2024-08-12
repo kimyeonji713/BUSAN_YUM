@@ -33,7 +33,7 @@ export const Search = styled.div`
 `;
 export const MainBanner = styled.div`
   width: 100%;
-  height: 150px;
+  height: 320px;
   background-color: lightgray;
   margin-bottom: 60px;
 `;

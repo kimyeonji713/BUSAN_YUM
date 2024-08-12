@@ -106,7 +106,7 @@ export const Login = () => {
   return (
     <Container>
       <Form onSubmit={handleSubmit(loginHandler)}>
-        <Link to={routes.home}>
+        <Link to={routes.main}>
           <img src={imgUrl} alt="logo" />
         </Link>
         <Title>

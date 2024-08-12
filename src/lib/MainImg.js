@@ -1,6 +1,4 @@
-import { MainPage } from "../pages/main/MainPage";
-
-const MImg = [
+const mImg = [
   {
     id: 0,
     name: "main_1",
@@ -33,22 +31,12 @@ const MImg = [
   },
 ];
 
-export const MainImg = () => {
-  const [number, setNumber] = useState(0);
+export const mainImg = () => {
+  const number = Math.floor(Math.random() * 5);
+  console.log(number);
 
-  useEffect(() => {
-    (async () => {
-      try {
-        setNumber(Math.floor(Math.random() * 5));
-      } catch (error) {
-        console.log(error);
-        alert("에러 발생");
-      }
-    })();
-  }, []);
-  return (
-    <>
-      <MainPage imgData={MImg} numData={number} />
-    </>
-  );
+  const a = mImg[number];
+
+  console.log(a);
+  return { a };
 };

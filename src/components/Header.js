@@ -174,7 +174,7 @@ export const Header = () => {
       onScroll={scrollHandler}
     >
       <Wrap onClick={closeHandler}>
-        <Link to={routes.home}>
+        <Link to={routes.main}>
           <img src={imgUrl} alt="logo" />
         </Link>
         <button className="hamberger" onClick={showHandler}>
@@ -188,7 +188,7 @@ export const Header = () => {
           <Menu>
             <TopWrap>
               <Top>
-                <Link to={routes.home}>
+                <Link to={routes.main}>
                   <img src={imgUrl} alt="logo" />
                 </Link>
                 <div className="close">
