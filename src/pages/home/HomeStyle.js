@@ -38,20 +38,18 @@ export const MainBanner = styled.div`
   margin-bottom: 60px;
 `;
 export const Notice = styled.div`
+  font-family: "Jua", sans-serif;
+  font-weight: 400;
   width: 100%;
-  height: 320px;
+  height: 350px;
   border-top: 1px solid ${colors.fontColor_2};
   border-bottom: 1px solid ${colors.fontColor_2};
   margin-bottom: 60px;
-  font-size: 18px;
+  font-size: 20px;
 
   a {
     text-decoration: none;
     color: ${colors.point_1};
-  }
-  .plus {
-    margin-left: 20px;
-    color: #555;
   }
 `;
 

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { areaList, petList, safeList_2 } from "../../api";
+import { recommendList, safeList_2 } from "../../api";
 import { Link } from "react-router-dom";
 import { FiSearch } from "react-icons/fi";
 import { routes } from "../../routes";
@@ -23,7 +23,8 @@ export const Home = () => {
   useScrollTop();
   const [safeListData, setSafeListData] = useState();
   const [isLoading, setIsLoading] = useState(false);
-  const [petListData, setPetData] = useState();
+  const [recListData, setRecData] = useState();
+
   useEffect(() => {
     (async () => {
       try {
@@ -34,10 +35,10 @@ export const Home = () => {
               items: { item },
             },
           },
-        } = await petList();
+        } = await recommendList();
 
         console.log(item);
-
+        setRecData(item);
         setSafeListData(safeData);
         setIsLoading(false);
       } catch (error) {
@@ -46,7 +47,7 @@ export const Home = () => {
     })();
   }, []);
 
-  console.log(petListData);
+  // console.log(recListData);
 
   // console.log(safeListData);
 
@@ -69,21 +70,16 @@ export const Home = () => {
                 {safeListData?.map((data) => (
                   <Text key={data?.sfty_notice_id}>{data?.title} ...</Text>
                 ))}
-                <p className="plus">...</p>
               </Link>
             </Notice>
             <KoWrap>
-              <h3>국내는 어떠세요?</h3>
+              <h3>여기는 어떠세요?</h3>
               <div className="img_2">
                 <div className="img_a">1</div>
                 <div className="img_a">2</div>
                 <div className="img_a">3</div>
               </div>
             </KoWrap>
-            <GoWrap>
-              <h3>반려동물과 함께 떠나시나요?</h3>
-              <div className="img_1"></div>
-            </GoWrap>
           </Wrap>
           <Footer />
         </Container>

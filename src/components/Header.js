@@ -9,6 +9,8 @@ import { BsPersonCircle } from "react-icons/bs";
 import { FiSearch } from "react-icons/fi";
 
 const Container = styled.header`
+  font-family: "Jua", sans-serif;
+
   max-width: 500px;
   width: 100%;
   height: 50px;
@@ -33,9 +35,16 @@ const Wrap = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  img {
-    width: 30%;
-    cursor: pointer;
+  a {
+    text-decoration: none;
+    color: ${colors.point_1};
+    font-weight: 700;
+    font-size: 25px;
+    letter-spacing: 2px;
+
+    span {
+      color: ${colors.point_2};
+    }
   }
 
   .hamberger {
@@ -78,12 +87,21 @@ const TopWrap = styled.div`
 
 const Top = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  margin-top: 20px;
 
   a {
-    text-align: center;
-    margin-left: 20px;
+    text-decoration: none;
+    color: ${colors.point_1};
+    font-weight: 700;
+    font-size: 40px;
+    letter-spacing: 2px;
+    margin-left: 160px;
+
+    span {
+      color: ${colors.point_2};
+    }
   }
   .close {
     padding: 2px 5px;
@@ -107,6 +125,7 @@ const Login = styled.div`
   color: ${colors.fontColor};
   font-size: 20px;
   font-weight: 700;
+  margin-top: 30px;
 
   a {
     font-size: 16px;
@@ -131,7 +150,7 @@ const SearchBtn = styled.button`
   font-size: 18px;
   font-weight: 700;
   color: ${colors.fontColor};
-  margin: 0px 10px;
+  margin: 20px 10px;
   cursor: pointer;
   a {
     text-decoration: none;
@@ -145,6 +164,8 @@ const SearchBtn = styled.button`
 export const Header = () => {
   const [show, setShow] = useState(false);
   const imgUrl = "/img/logo.png";
+  // <img src={imgUrl} alt="logo" />
+
   const [scrollPosition, setScrollPosition] = useState(0);
 
   const scrollHandler = () => {
@@ -175,7 +196,7 @@ export const Header = () => {
     >
       <Wrap onClick={closeHandler}>
         <Link to={routes.main}>
-          <img src={imgUrl} alt="logo" />
+          휴가<span>YUM?</span>
         </Link>
         <button className="hamberger" onClick={showHandler}>
           <FaHamburger />
@@ -189,7 +210,7 @@ export const Header = () => {
             <TopWrap>
               <Top>
                 <Link to={routes.main}>
-                  <img src={imgUrl} alt="logo" />
+                  휴가<span>YUM?</span>
                 </Link>
                 <div className="close">
                   <IoClose />

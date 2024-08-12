@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
 export const PageTitle = ({ title }) => {
   return (
     <Helmet>
-      <title>travel keeper | {title}</title>
+      <title>휴가YUM? | {title}</title>
     </Helmet>
   );
 };
