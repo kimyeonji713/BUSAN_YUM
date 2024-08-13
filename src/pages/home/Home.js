@@ -129,7 +129,7 @@ export const Home = () => {
     })();
   }, []);
 
-  console.log(foodData);
+  // console.log(foodData);
   // const params = {
   //   slidesPerView: 6.3,
   //   spaceBetween: 20,

@@ -5,10 +5,32 @@ export const Container = styled.section`
   max-width: 500px;
   width: 100%;
   height: 100vh;
-  margin: 100px auto;
+  margin: 0 auto;
   overflow: hidden;
 `;
 export const Wrap = styled.div``;
+export const Search = styled.div`
+  all: unset;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: ${colors.point_2};
+  border-radius: 15px;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 120px 10px 60px 10px;
+  cursor: pointer;
+  color: ${colors.fontColor_2};
+  a {
+    text-decoration: none;
+    color: ${colors.fontColor_2};
+    opacity: 0.7;
+    font-size: 15px;
+    font-weight: 600;
+  }
+`;
 
 export const ConWrap = styled.div`
   width: 100%;
@@ -47,29 +69,6 @@ export const Text = styled.div`
     bottom: 20px;
     left: 20px;
     color: #fff;
-  }
-`;
-
-export const Search = styled.div`
-  all: unset;
-  width: 90%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px;
-  background-color: ${colors.point_2};
-  border-radius: 15px;
-  font-size: 18px;
-  font-weight: 700;
-  margin: 120px 10px 60px 10px;
-  cursor: pointer;
-  color: ${colors.fontColor_2};
-  a {
-    text-decoration: none;
-    color: ${colors.fontColor_2};
-    opacity: 0.7;
-    font-size: 15px;
-    font-weight: 600;
   }
 `;
 
