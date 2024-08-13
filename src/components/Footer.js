@@ -13,13 +13,15 @@ const ConWrap = styled.footer`
   flex-direction: column;
   text-align: center;
   font-size: 15px;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 600;
 `;
 
 const Git = styled.div`
-  margin-top: -15px;
   a {
     margin-left: 5px;
     cursor: pointer;
+    color: #000;
   }
 `;
 
@@ -30,6 +32,7 @@ const GoMAin = styled.div`
     font-size: 15px;
     border-bottom: 1px solid #888;
     cursor: pointer;
+    color: #000;
   }
 `;
 

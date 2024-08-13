@@ -30,13 +30,13 @@ const Form = styled.form`
   font-size: 18px;
   font-weight: 700;
   cursor: pointer;
-  color: ${colors.fontColor_2};
+  color: lightgray;
 
   input {
     all: unset;
     font-size: 16px;
     font-weight: 600;
-    letter-spacing: -2px;
+    color: ${colors.fontColor_2};
   }
   button {
     all: unset;
@@ -67,7 +67,7 @@ export const Search = () => {
               required: "검색어를 입력해주세요.",
             })}
             type="text"
-            placeholder="어떤걸 검색하시나요?"
+            placeholder="어떤 걸 검색하시나요?"
           ></input>
           <button>
             <FiSearch />

@@ -3,7 +3,7 @@ import { foodList } from "../../api";
 import { Link } from "react-router-dom";
 import { FiSearch } from "react-icons/fi";
 import { routes } from "../../routes";
-import { Container, Search, Wrap } from "./HomeStyle";
+import { Container, ConWrap, Search, Text, Wrap } from "./HomeStyle";
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
 import { useScrollTop } from "../../lib/useScrollTop";
@@ -54,49 +54,64 @@ export const Home = () => {
               <Link to={routes.search}>어떤 맛집을 찾으시나요?</Link>
               <FiSearch />
             </Search>
-            <Swiper
-              modules={[Pagination]}
-              slidesPerView={1}
-              spaceBetween={1}
-              pagination={{ clickable: true }}
-              autoplay={{ delay: 2000 }}
-            >
-              <SwiperSlide>
-                <Link to={routes.detail}>
-                  <img
-                    src="https://image.ajunews.com/content/image/2018/07/25/20180725142544658121.jpg"
-                    alt="한식"
-                  ></img>
-                </Link>
-              </SwiperSlide>
+            <ConWrap>
+              <Swiper
+                className="swiper"
+                modules={[Pagination]}
+                slidesPerView={1}
+                spaceBetween={1}
+                pagination={{ clickable: true }}
+                autoplay={{ delay: 2000 }}
+              >
+                <SwiperSlide>
+                  <Link to={routes.detail}>
+                    <img
+                      src="https://image.ajunews.com/content/image/2018/07/25/20180725142544658121.jpg"
+                      alt="한식"
+                    ></img>
+                    <Text>
+                      <h3>한식을 원하시나요?</h3>
+                    </Text>
+                  </Link>
+                </SwiperSlide>
 
-              <SwiperSlide>
-                <Link to={routes.detail}>
-                  <img
-                    src="https://182951411a04b5d3.kinxzone.com/wp-content/themes/shinhwa/include/img/img_menu_chwihong4.jpg"
-                    alt="중식"
-                  ></img>
-                </Link>
-              </SwiperSlide>
+                <SwiperSlide>
+                  <Link to={routes.detail}>
+                    <img
+                      src="https://182951411a04b5d3.kinxzone.com/wp-content/themes/shinhwa/include/img/img_menu_chwihong4.jpg"
+                      alt="중식"
+                    ></img>
+                    <Text>
+                      <h3>중식을 원하시나요?</h3>
+                    </Text>
+                  </Link>
+                </SwiperSlide>
 
-              <SwiperSlide>
-                <Link to={routes.detail}>
-                  <img
-                    src="https://rimage.hitosara.com/gg/image/0004031389/0004031389F1.jpg"
-                    alt="일식"
-                  ></img>
-                </Link>
-              </SwiperSlide>
+                <SwiperSlide className="">
+                  <Link to={routes.detail}>
+                    <img
+                      src="https://rimage.hitosara.com/gg/image/0004031389/0004031389F1.jpg"
+                      alt="일식"
+                    ></img>
+                    <Text>
+                      <h3>일식을 원하시나요?</h3>
+                    </Text>
+                  </Link>
+                </SwiperSlide>
 
-              <SwiperSlide>
-                <Link to={routes.detail}>
-                  <img
-                    src="https://cafe24.poxo.com/ec01/foodasb2021/HOvhRhvOk+Cp2KY4JuusAnee1G5LmzxKdfC+m77FZzxNmd2SaqRhvdeSQ47MGXooGBa9VtRfLe31tr82SJMDgg==/_/web/product/medium/202211/90ee186a22b6b5d92d3648cb0dd5f1d9.jpg"
-                    alt="양식"
-                  ></img>
-                </Link>
-              </SwiperSlide>
-            </Swiper>
+                <SwiperSlide>
+                  <Link to={routes.detail}>
+                    <img
+                      src="https://i.pinimg.com/564x/f8/cf/2e/f8cf2ec752acf47596c470a714595f9d.jpg"
+                      alt="양식"
+                    ></img>
+                    <Text>
+                      <h3>양식을 원하시나요?</h3>
+                    </Text>
+                  </Link>
+                </SwiperSlide>
+              </Swiper>
+            </ConWrap>
           </Wrap>
           <Footer />
         </Container>

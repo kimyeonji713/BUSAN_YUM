@@ -9,13 +9,11 @@ import { BsPersonCircle } from "react-icons/bs";
 import { FiSearch } from "react-icons/fi";
 
 const Container = styled.header`
-  font-family: "Jua", sans-serif;
-
   max-width: 500px;
   width: 100%;
   height: 50px;
   position: fixed;
-  top: 0;
+  top: 20px;
   left: 50%;
   transform: translateX(-50%);
   padding: 10px;
@@ -140,7 +138,7 @@ const Login = styled.div`
 
 const SearchBtn = styled.button`
   all: unset;
-  width: 90%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -164,7 +162,6 @@ const SearchBtn = styled.button`
 export const Header = () => {
   const [show, setShow] = useState(false);
   const imgUrl = "/img/logo.png";
-  // <img src={imgUrl} alt="logo" />
 
   const [scrollPosition, setScrollPosition] = useState(0);
 
