@@ -1,3 +1,5 @@
+import { MainPage } from "../pages/main/MainPage";
+
 const mImg = [
   {
     id: 0,
@@ -33,10 +35,14 @@ const mImg = [
 
 export const mainImg = () => {
   const number = Math.floor(Math.random() * 5);
-  console.log(number);
+  // console.log(number);
 
-  const a = mImg[number];
+  const randomImg = mImg[number];
 
-  console.log(a);
-  return { a };
+  // console.log(randomImg);
+  return (
+    <>
+      <MainPage randomData={randomImg} />
+    </>
+  );
 };

@@ -196,7 +196,7 @@ export const Header = () => {
     >
       <Wrap onClick={closeHandler}>
         <Link to={routes.main}>
-          휴가<span>YUM?</span>
+          부산<span>YUM</span>
         </Link>
         <button className="hamberger" onClick={showHandler}>
           <FaHamburger />
@@ -210,7 +210,7 @@ export const Header = () => {
             <TopWrap>
               <Top>
                 <Link to={routes.main}>
-                  휴가<span>YUM?</span>
+                  부산<span>YUM</span>
                 </Link>
                 <div className="close">
                   <IoClose />
