@@ -23,17 +23,27 @@ const Wrap = styled.div`
     rgba(180, 180, 180, 0.3) 73%,
     rgba(0, 0, 0, 0.5) 100%
   );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  img {
+    width: 55%;
+    margin-top: -400px;
+  }
 `;
+
 const Title = styled.h3`
   font-family: "Jua", sans-serif;
   padding: 120px 20px;
   text-align: center;
   color: ${colors.point_1};
-  margin-top: -50px;
-  font-size: 60px;
+  margin-top: -130px;
+  font-size: 35px;
   font-weight: 900;
   span {
-    margin-left: 8px;
+    margin-left: 5px;
     color: ${colors.point_2};
   }
   margin-bottom: -20px;
@@ -44,7 +54,7 @@ const Button = styled.button`
   height: 50px;
   background-color: ${colors.point_2};
   text-align: center;
-  margin-left: 150px;
+  margin-top: -60px;
   border-radius: 15px;
   opacity: 0.6;
   cursor: pointer;
@@ -93,6 +103,7 @@ const mImg = [
 ];
 export const MainPage = () => {
   const [isLoading, setIsLoading] = useState(false);
+  const imgUrl = "/img/logo.png";
 
   mainImg();
   useEffect(() => {
@@ -120,6 +131,7 @@ export const MainPage = () => {
       ) : (
         <Container $BgUrl={randomImg?.url}>
           <Wrap>
+            <img src={imgUrl} alt="logo"></img>
             <Title>
               부산<span>YUM</span>
             </Title>

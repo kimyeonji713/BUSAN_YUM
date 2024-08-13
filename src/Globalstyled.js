@@ -2,8 +2,8 @@ import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
 
 export const colors = {
-  point_1: "#5BBCFF",
-  point_2: "#FDE767",
+  point_1: "#3883FC",
+  point_2: "#FFCF3E",
   sub: "#666",
   backsub: "rgba(0, 0, 0, 0.7)",
   fontColor: "#fff",
