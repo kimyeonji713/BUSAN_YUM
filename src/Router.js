@@ -8,6 +8,7 @@ import { MainPage } from "./pages/main/MainPage";
 import { Login } from "./pages/Login";
 import { SignUp } from "./pages/SignUp";
 import { Notice } from "./pages/Notice";
+import { LocalDetail } from "./pages/local/LocalDetail";
 
 const Router = () => {
   return (
@@ -19,7 +20,7 @@ const Router = () => {
         <Route path={routes.search} element={<Search />} />
         <Route path={routes.login} element={<Login />} />
         <Route path={routes.signup} element={<SignUp />} />
-        <Route path={routes.notice} element={<Notice />} />
+        <Route path={routes.local} element={<LocalDetail />} />
 
         <Route path="/*" element={<PageNotFound />} />
       </Routes>

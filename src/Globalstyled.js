@@ -31,6 +31,7 @@ export const GlobalStyled = createGlobalStyle`
 *{box-sizing:border-box}
 
 
+
 body{
     /* font-family: "Noto Sans KR", sans-serif; */
     font-family: "Jua", sans-serif;

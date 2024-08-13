@@ -79,26 +79,26 @@ const mImg = [
   {
     id: 1,
     name: "main_2",
-    url: `https://i.pinimg.com/564x/f4/1c/0b/f41c0b8ab98220f5c2fcf4a76bcf3ced.jpg`,
-    desc: "남산타워",
+    url: `https://i.pinimg.com/564x/76/06/80/7606809eb55d981989fb1b437670db1d.jpg`,
+    desc: "청사포",
   },
   {
     id: 2,
     name: "main_3",
-    url: `https://i.pinimg.com/564x/7a/8f/e8/7a8fe83d5888e2950ed5fd9cfa9cc047.jpg`,
-    desc: "경주",
+    url: `https://i.pinimg.com/736x/b0/1c/c2/b01cc272de345db4a008c66e47c3133e.jpg`,
+    desc: "마린시티",
   },
   {
     id: 3,
     name: "main_4",
-    url: `https://i.pinimg.com/564x/2d/7e/bd/2d7ebd6c91be99d0ff16f8012d10d031.jpg`,
-    desc: "롯데타워",
+    url: `https://i.pinimg.com/564x/52/b9/06/52b9067df275461f7db6ee7115899625.jpg`,
+    desc: "감천문화마을",
   },
   {
     id: 4,
     name: "main_5",
-    url: `https://i.pinimg.com/564x/eb/db/60/ebdb6034ede5c3d3e7d69c18a801414d.jpg`,
-    desc: "경복궁",
+    url: `https://i.pinimg.com/564x/df/2d/89/df2d89183f13f6f8ad1fb402baa430d8.jpg`,
+    desc: "부기",
   },
 ];
 export const MainPage = () => {
