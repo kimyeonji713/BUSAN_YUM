@@ -35,7 +35,7 @@ export const GlobalStyled = createGlobalStyle`
 body{
     /* font-family: "Noto Sans KR", sans-serif; */
     font-family: "Jua", sans-serif;
-    background-color: #fff;
+    background-color: #f1f1f1;
     /* color: white; */
     
 }

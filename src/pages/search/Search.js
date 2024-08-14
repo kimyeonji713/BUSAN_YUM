@@ -37,6 +37,9 @@ const Form = styled.form`
     font-size: 16px;
     font-weight: 600;
     color: ${colors.fontColor_2};
+    &::placeholder {
+      color: lightgray;
+    }
   }
   button {
     all: unset;

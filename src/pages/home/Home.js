@@ -18,12 +18,10 @@ import { Footer } from "../../components/Footer";
 import { useScrollTop } from "../../lib/useScrollTop";
 import { Loading } from "../../components/Loading";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-import styled from "styled-components";
-
-// SwiperCore.use([Pagination]);
+import "swiper/css/autoplay";
 
 const localImg = [
   {
@@ -64,7 +62,7 @@ const localImg = [
   {
     id: 7,
     name: "부산진구",
-    url: `https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20180119_126%2F15163234027025yz4F_JPEG%2FT45n8pkwss5iicWv5bIUJCRN.jpg`,
+    url: `https://search.pstatic.net/common?src=http%3A%2F%2Fblogfiles13.naver.net%2F20150729_195%2Fdael_korea_1438133142447jFcq7_PNG%2F10.png&type=f1040_576_domesearch`,
   },
   {
     id: 8,
@@ -130,10 +128,6 @@ export const Home = () => {
   }, []);
 
   // console.log(foodData);
-  // const params = {
-  //   slidesPerView: 6.3,
-  //   spaceBetween: 20,
-  // };
 
   const params = {
     slidesPerView: 3.3,
@@ -168,7 +162,7 @@ export const Home = () => {
             <ConWrap>
               <Swiper
                 className="swiper"
-                modules={[Pagination]}
+                modules={[Pagination, Autoplay]}
                 slidesPerView={1}
                 spaceBetween={1}
                 pagination={{ clickable: true }}
@@ -230,7 +224,10 @@ export const Home = () => {
                 <Swiper className="local" {...params}>
                   {localImg?.map((data) => (
                     <SwiperSlide key={data.id}>
-                      <Link to={`/local/${data.id}`}>
+                      <Link
+                        to={`/local/${data.id}`}
+                        state={{ title: data.name }}
+                      >
                         <img src={data.url} alt="busan"></img>
                         <Title>
                           <h3>{data.name}</h3>

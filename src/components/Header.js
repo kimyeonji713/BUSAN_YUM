@@ -18,10 +18,10 @@ const Container = styled.header`
   transform: translateX(-50%);
   padding: 10px;
   z-index: 10;
+  background-color: #fff;
   &.active {
     padding: 10px;
     width: 100%;
-
     top: 0;
     left: 50%;
     transform: translateX(-50%);

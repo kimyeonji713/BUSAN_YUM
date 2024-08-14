@@ -6,7 +6,7 @@ import { routes } from "../routes";
 
 const ConWrap = styled.footer`
   height: 150px;
-  border-top: 1px solid ${colors.sub};
+  border-top: 1px solid #888;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,13 +15,15 @@ const ConWrap = styled.footer`
   font-size: 15px;
   font-family: "Noto Sans KR", sans-serif;
   font-weight: 600;
+  background-color: #fff;
+  color: #888;
 `;
 
 const Git = styled.div`
   a {
     margin-left: 5px;
     cursor: pointer;
-    color: #000;
+    color: #888;
   }
 `;
 
@@ -32,7 +34,7 @@ const GoMAin = styled.div`
     font-size: 15px;
     border-bottom: 1px solid #888;
     cursor: pointer;
-    color: #000;
+    color: #888;
   }
 `;
 

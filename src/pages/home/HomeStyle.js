@@ -6,9 +6,11 @@ export const Container = styled.section`
   width: 100%;
   height: 100vh;
   margin: 0 auto;
-  overflow: hidden;
+  background-color: #fff;
+  padding: 120px 0px;
 `;
 export const Wrap = styled.div``;
+
 export const Search = styled.div`
   all: unset;
   width: 90%;
@@ -20,7 +22,7 @@ export const Search = styled.div`
   border-radius: 15px;
   font-size: 18px;
   font-weight: 700;
-  margin: 120px 10px 60px 10px;
+  margin: 0 10px 60px 10px;
   cursor: pointer;
   color: ${colors.fontColor_2};
   a {
@@ -40,6 +42,7 @@ export const ConWrap = styled.div`
   margin-bottom: 70px;
   .swiper {
     height: 100%;
+
     img {
       display: block;
     }
@@ -76,7 +79,7 @@ export const LocalWrap = styled.div`
   width: 100%;
   height: 250px;
   overflow: hidden;
-
+  padding: 15px;
   h3 {
     font-family: "Noto Sans KR", sans-serif;
     font-size: 22px;
@@ -89,7 +92,6 @@ export const LocalWrap = styled.div`
 
     img {
       display: block;
-      border-radius: 20px;
     }
   }
   margin-bottom: 70px;
