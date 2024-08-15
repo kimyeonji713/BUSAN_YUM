@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { routes } from "../routes";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import { FaHamburger } from "react-icons/fa";
+import { FaHamburger, FaRegHeart } from "react-icons/fa";
 import { colors, spacing } from "../Globalstyled";
 import { IoClose } from "react-icons/io5";
 import { BsPersonCircle } from "react-icons/bs";
@@ -53,116 +53,81 @@ const Wrap = styled.div`
     padding: 5px 8px;
     border-radius: 5px;
     cursor: pointer;
+    .ham {
+      display: none;
+      font-family: "Noto Sans KR", sans-serif;
+      width: 120px;
+      height: 150px;
+      background-color: ${colors.point_1};
+      display: ${(props) => props.$showAct};
+      position: fixed;
+      top: 45px;
+      right: 0;
+      .menu {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.2);
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+    }
     &:hover {
       background-color: rgba(0, 0, 0, 0.1);
+      .ham {
+        display: block;
+      }
     }
   }
 `;
 
-const Ham = styled.div`
-  width: 100%;
-  height: 100vh;
-  background: url(${(props) => props.$BgUrl}) no-repeat center / cover;
-  display: ${(props) => props.$showAct};
-  position: fixed;
-  top: 0;
-  right: 0;
-`;
-
-const Menu = styled.div`
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(3px);
-  position: absolute;
-  top: 0;
-  right: 0;
-`;
-
-const TopWrap = styled.div`
-  padding: 10px ${spacing.moSideide};
-`;
-
-const Top = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 20px;
-
-  a {
-    text-decoration: none;
-    color: ${colors.point_1};
-    font-weight: 700;
-    font-size: 40px;
-    letter-spacing: 2px;
-    margin-left: 160px;
-
-    span {
-      color: ${colors.point_2};
-    }
-  }
-  .close {
-    padding: 2px 5px;
-    color: ${colors.fontColor};
-    font-size: 20px;
-    font-weight: 700;
-    cursor: pointer;
-    &:hover {
-      border-radius: 5px;
-      background-color: rgba(255, 255, 255, 0.1);
-    }
-  }
-`;
+const TopWrap = styled.div``;
 
 const Login = styled.div`
-  margin: 15px 140px 30px 140px;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0px ${spacing.hamSide};
   color: ${colors.fontColor};
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 700;
   margin-top: 30px;
 
   a {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 700;
     color: ${colors.fontColor};
     text-decoration: none;
     border-bottom: 1px solid ${colors.fontColor};
-    margin-left: 15px;
+    margin-left: 10px;
     opacity: 0.7;
   }
 `;
 
-const SearchBtn = styled.button`
-  all: unset;
-  width: 100%;
+const Like = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 15px;
-  border: 1px solid ${colors.fontColor};
-  border-radius: 15px;
-  font-size: 18px;
-  font-weight: 700;
+  padding: 0px ${spacing.hamSide};
   color: ${colors.fontColor};
-  margin: 20px 10px;
-  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 30px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid ${colors.fontColor};
+
   a {
-    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
     color: ${colors.fontColor};
+    text-decoration: none;
+    border-bottom: 1px solid ${colors.fontColor};
+    margin-left: 10px;
     opacity: 0.7;
-    font-size: 15px;
-    font-weight: 600;
   }
 `;
 
 export const Header = () => {
-  const [show, setShow] = useState(false);
-  const imgUrl = "/img/logo.png";
-
   const [scrollPosition, setScrollPosition] = useState(0);
 
   const scrollHandler = () => {
@@ -175,55 +140,32 @@ export const Header = () => {
     setScrollPosition(scrollPosition);
   });
 
-  const showHandler = () => {
-    if (!show) {
-      setShow(true);
-    }
-  };
-  const closeHandler = () => {
-    if (show) {
-      setShow(false);
-    }
-  };
-
   return (
     <Container
       className={scrollPosition < 100 ? " " : "active"}
       onScroll={scrollHandler}
     >
-      <Wrap onClick={closeHandler}>
+      <Wrap>
         <Link to={routes.main}>
           부산<span>YUM</span>
         </Link>
-        <button className="hamberger" onClick={showHandler}>
+        <button className="hamberger">
           <FaHamburger />
+          <div className="ham">
+            <div className="menu">
+              <TopWrap>
+                <Like>
+                  <FaRegHeart />
+                  <Link to={""}>좋아요</Link>
+                </Like>
+                <Login>
+                  <BsPersonCircle />
+                  <Link to={routes.login}>로그인</Link>
+                </Login>
+              </TopWrap>
+            </div>
+          </div>
         </button>
-
-        <Ham
-          $BgUrl="https://i.pinimg.com/564x/f4/1c/0b/f41c0b8ab98220f5c2fcf4a76bcf3ced.jpg"
-          $showAct={show ? "block" : "none"}
-        >
-          <Menu>
-            <TopWrap>
-              <Top>
-                <Link to={routes.main}>
-                  부산<span>YUM</span>
-                </Link>
-                <div className="close">
-                  <IoClose />
-                </div>
-              </Top>
-              <Login>
-                <BsPersonCircle />
-                <Link to={routes.login}>회원이신가요?</Link>
-              </Login>
-            </TopWrap>
-            <SearchBtn>
-              <Link to={routes.search}>어떤 걸 검색하시나요?</Link>
-              <FiSearch />
-            </SearchBtn>
-          </Menu>
-        </Ham>
       </Wrap>
     </Container>
   );
