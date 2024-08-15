@@ -20,9 +20,9 @@ const Wrap = styled.div`
   height: 100%;
   background: linear-gradient(
     180deg,
-    rgba(255, 255, 255, 0.8) 40%,
+    rgba(0, 0, 0, 0.5) 40%,
     rgba(180, 180, 180, 0.3) 73%,
-    rgba(0, 0, 0, 0.5) 100%
+    rgba(255, 255, 255, 0.5) 100%
   );
   display: flex;
   justify-content: center;
