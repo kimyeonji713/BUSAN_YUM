@@ -17,7 +17,7 @@ const Container = styled.header`
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
-  padding: 10px;
+  padding: 10px 15px;
   z-index: 10;
   background-color: #fff;
   &.active {

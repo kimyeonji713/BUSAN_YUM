@@ -13,7 +13,7 @@ const Container = styled.div`
   width: 100%;
   height: 800px;
   background-color: #f5f7f8;
-  padding: 100px 0;
+  padding: 80px 0;
   border-radius: 10px;
 `;
 
@@ -21,15 +21,16 @@ const Form = styled.form`
   img {
     transform: translateX(125px);
     width: 50%;
+    margin-bottom: 30px;
   }
 
   input {
     all: unset;
-    width: 90%;
-    padding: 10px 15px;
+    width: 85%;
+    padding: 10px 20px;
     font-size: 18px;
     background-color: #f5f7f8;
-    margin-left: 10px;
+    margin-left: 15px;
     color: ${colors.sub};
     border-bottom: 1px solid ${colors.sub};
   }
@@ -38,26 +39,15 @@ const Form = styled.form`
   }
 `;
 
-const Title = styled.h3`
-  text-align: center;
-  color: ${colors.point_1};
-  margin-top: -20px;
-  span {
-    margin-left: 3px;
-    color: ${colors.point_2};
-  }
-  margin-bottom: 120px;
-`;
-
 const Button = styled.button`
   all: unset;
-  width: 90%;
+  width: 85%;
   height: 50px;
   padding: 5px 10px;
 
   border-radius: 5px;
   text-align: center;
-  margin: 100px 0 100px 12px;
+  margin: 100px 0 100px 25px;
   background-color: ${colors.point_2};
   opacity: ${(props) => (props.$isBtnActive ? "1" : "0.7")};
   cursor: ${(props) => (props.$isBtnActive ? "pointer" : "default")};
@@ -109,9 +99,7 @@ export const Login = () => {
         <Link to={routes.main}>
           <img src={imgUrl} alt="logo" />
         </Link>
-        <Title>
-          PROTECT YOUR <span>MEMORIES</span>
-        </Title>
+
         <input
           {...register("username", {
             required: "아이디는 필수 입니다.",
