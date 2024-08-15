@@ -1,10 +1,14 @@
 import styled from "styled-components";
-import { colors } from "../Globalstyled";
-import { Container } from "./Container";
 import { Link } from "react-router-dom";
 import { routes } from "../routes";
 
-const ConWrap = styled.footer`
+const Container = styled.footer`
+  max-width: 500px;
+  width: 100%;
+  height: 100vh;
+  margin: 0px auto;
+`;
+const ConWrap = styled.div`
   height: 150px;
   border-top: 1px solid #888;
   display: flex;

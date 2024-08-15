@@ -5,7 +5,7 @@ const baseUrl = "http://apis.data.go.kr/6260000/";
 const serviceKey =
   "czjc%2FLiXADgQwbo%2BD7wPVIDHrQsrdTly%2FtPY1ISDPgq1b4XfyXD4WryP5J6TNaEsZF9d%2F0%2F10Cto7gia8HcDnA%3D%3D";
 
-const option = "numOfRows=30&pageNo=1&resultType=json";
+const option = `numOfRows=30&pageNo=1&resultType=json`;
 
 const url = (urlName) => {
   return baseUrl + `${urlName}?ServiceKey=${serviceKey}&${option}`;
@@ -13,3 +13,8 @@ const url = (urlName) => {
 
 export const foodList = () =>
   fetch(url("FoodService/getFoodKr")).then((res) => res.json());
+
+export const scrollList = (pageNum) => {
+  const url_2 = `${baseUrl}/FoodService/getFoodKr?ServiceKey=${serviceKey}&numOfRows=30&pageNo=${pageNum}&resultType=json`;
+  fetch(url_2).then((res) => res.json());
+};
