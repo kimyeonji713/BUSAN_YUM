@@ -23,6 +23,15 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import { TopButton } from "./components/TopButton";
+import styled from "styled-components";
+
+const ImgWrap = styled.div`
+  img {
+    display: block;
+    width: 100%;
+    height: 280px;
+  }
+`;
 
 const localImg = [
   {
@@ -128,7 +137,7 @@ export const Home = () => {
     })();
   }, []);
 
-  // console.log(foodData);
+  console.log(foodData);
 
   const params = {
     slidesPerView: 3.3,
@@ -167,55 +176,19 @@ export const Home = () => {
                 slidesPerView={1}
                 spaceBetween={1}
                 pagination={{ clickable: true }}
-                autoplay={{ delay: 2000 }}
+                autoplay={{ delay: 3000 }}
               >
-                <SwiperSlide>
-                  <Link to={routes.detail}>
-                    <img
-                      src="https://image.ajunews.com/content/image/2018/07/25/20180725142544658121.jpg"
-                      alt="한식"
-                    ></img>
-                    <Text>
-                      <h3>한식을 원하시나요?</h3>
-                    </Text>
-                  </Link>
-                </SwiperSlide>
-
-                <SwiperSlide>
-                  <Link to={routes.detail}>
-                    <img
-                      src="https://182951411a04b5d3.kinxzone.com/wp-content/themes/shinhwa/include/img/img_menu_chwihong4.jpg"
-                      alt="중식"
-                    ></img>
-                    <Text>
-                      <h3>중식을 원하시나요?</h3>
-                    </Text>
-                  </Link>
-                </SwiperSlide>
-
-                <SwiperSlide className="">
-                  <Link to={routes.detail}>
-                    <img
-                      src="https://rimage.hitosara.com/gg/image/0004031389/0004031389F1.jpg"
-                      alt="일식"
-                    ></img>
-                    <Text>
-                      <h3>일식을 원하시나요?</h3>
-                    </Text>
-                  </Link>
-                </SwiperSlide>
-
-                <SwiperSlide>
-                  <Link to={routes.detail}>
-                    <img
-                      src="https://i.pinimg.com/564x/f8/cf/2e/f8cf2ec752acf47596c470a714595f9d.jpg"
-                      alt="양식"
-                    ></img>
-                    <Text>
-                      <h3>양식을 원하시나요?</h3>
-                    </Text>
-                  </Link>
-                </SwiperSlide>
+                {foodData?.map((data, index) => (
+                  <SwiperSlide key={data.UC_SEQ}>
+                    <ImgWrap>
+                      <img src={data.MAIN_IMG_NORMAL} alt="음식"></img>
+                      <Text>
+                        <h3>올해 추천 Top {index + 1}</h3>
+                        <h4>{data.MAIN_TITLE}</h4>
+                      </Text>
+                    </ImgWrap>
+                  </SwiperSlide>
+                ))}
               </Swiper>
             </ConWrap>
 

@@ -46,9 +46,6 @@ export const ConWrap = styled.div`
     img {
       display: block;
     }
-    .img_4 {
-      background-position: center;
-    }
   }
 `;
 
@@ -69,7 +66,16 @@ export const Text = styled.div`
     font-size: 20px;
     font-weight: 500;
     position: absolute;
-    bottom: 20px;
+    bottom: 50px;
+    left: 20px;
+    color: #fff;
+  }
+  h4 {
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    position: absolute;
+    bottom: 25px;
     left: 20px;
     color: #fff;
   }
