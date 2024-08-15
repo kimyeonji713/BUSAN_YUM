@@ -7,6 +7,7 @@ import { Loading } from "../../components/Loading";
 import { mainImg, MainImg } from "../../lib/MainImg";
 
 const Container = styled.div`
+  font-family: "Jua", sans-serif;
   max-width: 500px;
   width: 100%;
   height: 100vh;

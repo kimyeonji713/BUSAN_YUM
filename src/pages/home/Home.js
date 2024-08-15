@@ -26,10 +26,12 @@ import { TopButton } from "./components/TopButton";
 import styled from "styled-components";
 
 const ImgWrap = styled.div`
-  img {
-    display: block;
-    width: 100%;
-    height: 280px;
+  a {
+    img {
+      display: block;
+      width: 100%;
+      height: 280px;
+    }
   }
 `;
 
@@ -137,7 +139,7 @@ export const Home = () => {
     })();
   }, []);
 
-  console.log(foodData);
+  // console.log(foodData);
 
   const params = {
     slidesPerView: 3.3,
@@ -181,11 +183,17 @@ export const Home = () => {
                 {foodData?.map((data, index) => (
                   <SwiperSlide key={data.UC_SEQ}>
                     <ImgWrap>
-                      <img src={data.MAIN_IMG_NORMAL} alt="음식"></img>
-                      <Text>
-                        <h3>올해 추천 Top {index + 1}</h3>
-                        <h4>{data.MAIN_TITLE}</h4>
-                      </Text>
+                      <Link
+                        to={`/detail/${data.UC_SEQ}`}
+                        state={{ id: data.UC_SEQ }}
+                      >
+                        <img src={data.MAIN_IMG_NORMAL} alt="음식" />
+
+                        <Text>
+                          <h3>올해 추천 Top {index + 1}</h3>
+                          <h4>{data.MAIN_TITLE}</h4>
+                        </Text>
+                      </Link>
                     </ImgWrap>
                   </SwiperSlide>
                 ))}

@@ -1,16 +1,20 @@
 import styled from "styled-components";
-import { colors, spacing } from "../../Globalstyled";
+import { colors } from "../../Globalstyled";
 import { useForm } from "react-hook-form";
 import { FiSearch } from "react-icons/fi";
 import { ErrorMessage } from "../../components/ErrorMessage";
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
+import { searchList } from "../../api";
+import { useScrollTop } from "../../lib/useScrollTop";
+import { useEffect, useState } from "react";
 
 const Container = styled.div`
   max-width: 500px;
   width: 100%;
   height: 100vh;
-  margin: 20px auto;
+  margin: 0px auto;
+  background-color: #fff;
 `;
 
 const Wrap = styled.div`
@@ -38,12 +42,13 @@ const Form = styled.form`
     font-weight: 600;
     color: ${colors.fontColor_2};
     &::placeholder {
-      color: lightgray;
+      font-family: "Noto Sans KR", sans-serif;
+      color: #939185;
     }
   }
   button {
     all: unset;
-    margin-left: 200px;
+    margin-left: 160px;
     color: ${colors.point_2};
     padding: 5px;
     &:hover {
@@ -54,6 +59,27 @@ const Form = styled.form`
   }
 `;
 export const Search = () => {
+  useScrollTop();
+  const [isLoading, setIsLoading] = useState(false);
+  const [searchData, setSearchData] = useState();
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const {
+          getFoodKr: { item },
+        } = await searchList();
+
+        // console.log(item);
+        setSearchData(item);
+        setIsLoading(false);
+      } catch (error) {
+        console.log(error);
+      }
+    })();
+  }, []);
+
+  console.log(searchData);
   const {
     register,
     handleSubmit,

@@ -15,6 +15,13 @@ export const foodList = () =>
   fetch(url("FoodService/getFoodKr")).then((res) => res.json());
 
 export const scrollList = (pageNum) => {
-  const url_2 = `${baseUrl}/FoodService/getFoodKr?ServiceKey=${serviceKey}&numOfRows=30&pageNo=${pageNum}&resultType=json`;
-  fetch(url_2).then((res) => res.json());
+  const scrollUrl =
+    baseUrl +
+    `/FoodService/getFoodKr?ServiceKey=${serviceKey}&numOfRows=30&pageNo=${pageNum}&resultType=json`;
+  fetch(scrollUrl).then((res) => res.json());
+};
+
+export const searchList = (keyword) => {
+  const searchUrl = baseUrl + `FoodService/getFoodKr?RPRSNTV_MENU=${keyword}`;
+  return fetch(searchUrl, option).then((res) => res.json());
 };

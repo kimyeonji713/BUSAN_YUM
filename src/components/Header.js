@@ -9,6 +9,7 @@ import { BsPersonCircle } from "react-icons/bs";
 import { FiSearch } from "react-icons/fi";
 
 const Container = styled.header`
+  font-family: "Jua", sans-serif;
   max-width: 500px;
   width: 100%;
   height: 50px;

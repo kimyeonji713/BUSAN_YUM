@@ -4,8 +4,9 @@ import { Footer } from "../../components/Footer";
 import { Loading } from "../../components/Loading";
 import { useEffect, useState } from "react";
 import { foodList, scrollList } from "../../api";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { TopButton } from "../home/components/TopButton";
+import { colors } from "../../Globalstyled";
 
 const Container = styled.div``;
 const Wrap = styled.div`
@@ -38,7 +39,7 @@ const BannerWrap = styled.div`
 `;
 const Banner = styled.div`
   padding: 10px;
-  color: #3c3d37;
+  color: ${colors.fontColor_3};
 `;
 
 const Title = styled.h3`
@@ -96,7 +97,7 @@ export const LocalDetail = () => {
   }, []);
 
   // console.log(scrollData);
-  console.log(foodData);
+  // console.log(foodData);
 
   const fooData = foodData?.filter((data) => data.GUGUN_NM === title);
 
@@ -128,13 +129,15 @@ export const LocalDetail = () => {
             {fooData.map((data) => (
               <BannerWrap key={data.UC_SEQ}>
                 <img src={data?.MAIN_IMG_NORMAL}></img>
-                <Banner>
-                  <Title>{data.MAIN_TITLE}</Title>
-                  <MainMenu>{data.RPRSNTV_MENU}</MainMenu>
-                  <Desc>{data.ITEMCNTNTS}</Desc>
-                  <Order>{data.USAGE_DAY_WEEK_AND_TIME}</Order>
-                  <Tel>{data.CNTCT_TEL}</Tel>
-                </Banner>
+                <Link to={`/detail/${data.UC_SEQ}`} state={{ id: data.UC_SEQ }}>
+                  <Banner>
+                    <Title>{data.MAIN_TITLE}</Title>
+                    <MainMenu>{data.RPRSNTV_MENU}</MainMenu>
+                    <Desc>{data.ITEMCNTNTS}</Desc>
+                    <Order>{data.USAGE_DAY_WEEK_AND_TIME}</Order>
+                    <Tel>{data.CNTCT_TEL}</Tel>
+                  </Banner>
+                </Link>
               </BannerWrap>
             ))}
           </Wrap>

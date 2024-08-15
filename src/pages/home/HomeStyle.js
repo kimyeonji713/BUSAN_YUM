@@ -7,7 +7,7 @@ export const Container = styled.section`
   height: 100vh;
   margin: 0 auto;
   background-color: #fff;
-  padding: 120px 0px;
+  padding: 100px 0px;
 `;
 export const Wrap = styled.div``;
 
@@ -26,6 +26,8 @@ export const Search = styled.div`
   cursor: pointer;
   color: ${colors.fontColor_2};
   a {
+    font-family: "Noto Sans KR", sans-serif;
+
     text-decoration: none;
     color: ${colors.fontColor_2};
     opacity: 0.7;
@@ -42,10 +44,6 @@ export const ConWrap = styled.div`
   margin-bottom: 70px;
   .swiper {
     height: 100%;
-
-    img {
-      display: block;
-    }
   }
 `;
 
