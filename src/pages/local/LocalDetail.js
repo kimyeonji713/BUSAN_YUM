@@ -23,7 +23,7 @@ const Wrap = styled.div`
 
 const BannerWrap = styled.div`
   width: 100%;
-  height: 350px;
+  height: 400px;
   background-color: #c0d6e8;
   margin-bottom: 30px;
   border-radius: 20px;
@@ -33,12 +33,30 @@ const Banner = styled.div`
   padding: 10px;
 `;
 
-const Title = styled.h3``;
+const Title = styled.h3`
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 5px;
+`;
 
-const MainMenu = styled.div``;
-const Desc = styled.div``;
-const Tel = styled.div``;
-const Order = styled.div``;
+const MainMenu = styled.div`
+  margin-bottom: 5px;
+  font-size: 15px;
+  font-weight: 600;
+`;
+const Desc = styled.div`
+  font-size: 15px;
+  margin-bottom: 5px;
+  line-height: 16px;
+`;
+const Tel = styled.div`
+  font-size: 156x;
+  margin-bottom: 5px;
+`;
+const Order = styled.div`
+  font-size: 16px;
+  margin-bottom: 5px;
+`;
 
 export const LocalDetail = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -85,14 +103,12 @@ export const LocalDetail = () => {
                   <Title>{data.MAIN_TITLE}</Title>
                   <MainMenu>{data.RPRSNTV_MENU}</MainMenu>
                   <Desc>{data.ITEMCNTNTS}</Desc>
-                  <Tel>{data.CNTCT_TEL}</Tel>
                   <Order>{data.USAGE_DAY_WEEK_AND_TIME}</Order>
+                  <Tel>{data.CNTCT_TEL}</Tel>
                 </Banner>
               </BannerWrap>
             ))}
           </Wrap>
-
-          {/* <Wrap>{foodData.filter((data) => console.log(data))}</Wrap> */}
           <TopButton />
           <Footer />
         </Container>
