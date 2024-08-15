@@ -5,6 +5,7 @@ import { Loading } from "../../components/Loading";
 import { useEffect, useState } from "react";
 import { foodList } from "../../api";
 import { useLocation } from "react-router-dom";
+import { TopButton } from "../home/components/TopButton";
 
 const Container = styled.div`
   max-width: 500px;
@@ -92,6 +93,7 @@ export const LocalDetail = () => {
           </Wrap>
 
           {/* <Wrap>{foodData.filter((data) => console.log(data))}</Wrap> */}
+          <TopButton />
           <Footer />
         </Container>
       )}

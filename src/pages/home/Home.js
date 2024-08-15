@@ -22,6 +22,7 @@ import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
+import { TopButton } from "./components/TopButton";
 
 const localImg = [
   {
@@ -239,6 +240,7 @@ export const Home = () => {
               </LocalCon>
             </LocalWrap>
           </Wrap>
+          <TopButton />
           <Footer />
         </Container>
       )}
