@@ -8,6 +8,7 @@ import { Footer } from "../../components/Footer";
 import { colors } from "../../Globalstyled";
 import { GiRotaryPhone } from "react-icons/gi";
 import { LuMapPinOff } from "react-icons/lu";
+import { FaHeart, FaRegHeart } from "react-icons/fa";
 
 const Container = styled.div`
   max-width: 500px;
@@ -25,10 +26,26 @@ const Wrap = styled.div`
 const BannerWrap = styled.div`
   padding: 20px 15px;
 `;
-const Title = styled.h3`
-  font-size: 22px;
-  font-weight: 600;
-  margin-bottom: 10px;
+const Title = styled.div`
+  display: flex;
+  justify-content: space-between;
+  h3 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+`;
+
+const Heart = styled.button`
+  all: unset;
+  font-size: 18px;
+  display: ${(props) => props.$resetActive};
+`;
+const FHeart = styled.button`
+  all: unset;
+  font-size: 18px;
+  display: ${(props) => props.$changeActive};
+  color: crimson;
 `;
 const MainMenu = styled.h4`
   font-size: 18px;
@@ -71,6 +88,19 @@ const Map = styled.div`
 export const Detail = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [foodData, setFoodData] = useState();
+  const [show, setShow] = useState(false);
+
+  const changeHandler = () => {
+    if (!show) {
+      setShow(true);
+    }
+  };
+
+  const resetHandler = () => {
+    if (show) {
+      setShow(false);
+    }
+  };
   const {
     state: { id },
   } = useLocation();
@@ -104,7 +134,15 @@ export const Detail = () => {
             <Wrap key={data.UC_SEQ}>
               <img src={data.MAIN_IMG_NORMAL} />
               <BannerWrap>
-                <Title>{data.MAIN_TITLE}</Title>
+                <Title>
+                  <h3>{data.MAIN_TITLE}</h3>
+                  <Heart $resetActive={show ? "none" : "block"}>
+                    <FaRegHeart onClick={changeHandler} />
+                  </Heart>
+                  <FHeart $changeActive={show ? "block" : "none"}>
+                    <FaHeart className="fullHeart" onClick={resetHandler} />
+                  </FHeart>
+                </Title>
                 <MainMenu># {data.RPRSNTV_MENU}</MainMenu>
                 <Desc>{data.ITEMCNTNTS}</Desc>
                 <Order>{data.USAGE_DAY_WEEK_AND_TIME}</Order>
