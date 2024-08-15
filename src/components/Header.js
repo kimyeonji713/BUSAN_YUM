@@ -4,9 +4,7 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { FaHamburger, FaRegHeart } from "react-icons/fa";
 import { colors, spacing } from "../Globalstyled";
-import { IoClose } from "react-icons/io5";
 import { BsPersonCircle } from "react-icons/bs";
-import { FiSearch } from "react-icons/fi";
 
 const Container = styled.header`
   font-family: "Jua", sans-serif;
@@ -157,7 +155,7 @@ export const Header = () => {
               <TopWrap>
                 <Like>
                   <FaRegHeart />
-                  <Link to={""}>좋아요</Link>
+                  <Link to={routes.like}>좋아요</Link>
                 </Like>
                 <Login>
                   <BsPersonCircle />

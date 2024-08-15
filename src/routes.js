@@ -6,4 +6,5 @@ export const routes = {
   login: "/login",
   signup: "/signup",
   local: "/local/:id",
+  like: "/like",
 };

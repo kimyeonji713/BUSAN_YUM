@@ -9,6 +9,7 @@ import { colors } from "../../Globalstyled";
 import { GiRotaryPhone } from "react-icons/gi";
 import { LuMapPinOff } from "react-icons/lu";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
+import { useScrollTop } from "../../lib/useScrollTop";
 
 const Container = styled.div`
   max-width: 500px;
@@ -86,6 +87,8 @@ const Map = styled.div`
   margin-top: 40px;
 `;
 export const Detail = () => {
+  useScrollTop();
+
   const [isLoading, setIsLoading] = useState(true);
   const [foodData, setFoodData] = useState();
   const [show, setShow] = useState(false);

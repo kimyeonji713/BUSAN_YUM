@@ -7,8 +7,8 @@ import { PageNotFound } from "./pages/PageNotFound";
 import { MainPage } from "./pages/main/MainPage";
 import { Login } from "./pages/Login";
 import { SignUp } from "./pages/SignUp";
-import { Notice } from "./pages/Notice";
 import { LocalDetail } from "./pages/local/LocalDetail";
+import { Like } from "./pages/Like";
 
 const Router = () => {
   return (
@@ -21,7 +21,7 @@ const Router = () => {
         <Route path={routes.login} element={<Login />} />
         <Route path={routes.signup} element={<SignUp />} />
         <Route path={routes.local} element={<LocalDetail />} />
-
+        <Route path={routes.like} element={<Like />} />
         <Route path="/*" element={<PageNotFound />} />
       </Routes>
     </HashRouter>

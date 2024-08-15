@@ -55,7 +55,7 @@ export const Footer = () => {
           </a>
         </Git>
         <GoMAin>
-          <Link to={routes.main}>시작 페이지로 돌아가기</Link>
+          <Link to={routes.home}>시작 페이지로 돌아가기</Link>
         </GoMAin>
       </ConWrap>
     </Container>

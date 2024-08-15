@@ -7,6 +7,7 @@ import { foodList, scrollList } from "../../api";
 import { Link, useLocation } from "react-router-dom";
 import { TopButton } from "../home/components/TopButton";
 import { colors } from "../../Globalstyled";
+import { useScrollTop } from "../../lib/useScrollTop";
 
 const Container = styled.div``;
 const Wrap = styled.div`
@@ -31,7 +32,7 @@ const Category = styled.div`
 
 const BannerWrap = styled.div`
   width: 100%;
-  height: 400px;
+  height: 280px;
   background-color: #ffda78;
   margin-bottom: 30px;
   border-radius: 20px;
@@ -69,6 +70,7 @@ const Order = styled.div`
 `;
 
 export const LocalDetail = () => {
+  useScrollTop();
   const [isLoading, setIsLoading] = useState(true);
   const [foodData, setFoodData] = useState();
   const [scrollData, setScrollData] = useState();
@@ -128,14 +130,11 @@ export const LocalDetail = () => {
             <Category># {title}</Category>
             {fooData.map((data) => (
               <BannerWrap key={data.UC_SEQ}>
-                <img src={data?.MAIN_IMG_NORMAL}></img>
                 <Link to={`/detail/${data.UC_SEQ}`} state={{ id: data.UC_SEQ }}>
+                  <img src={data?.MAIN_IMG_NORMAL}></img>
                   <Banner>
                     <Title>{data.MAIN_TITLE}</Title>
                     <MainMenu>{data.RPRSNTV_MENU}</MainMenu>
-                    <Desc>{data.ITEMCNTNTS}</Desc>
-                    <Order>{data.USAGE_DAY_WEEK_AND_TIME}</Order>
-                    <Tel>{data.CNTCT_TEL}</Tel>
                   </Banner>
                 </Link>
               </BannerWrap>
