@@ -82,7 +82,7 @@ const Button = styled.button`
     width: 85%;
     height: 50px;
     padding: 5px 8px;
-    margin: 100px 0 100px 25px;
+    margin: 90px 0 90px 25px;
   }
   @media screen and (max-width: ${size.size368}) {
     width: 85%;
