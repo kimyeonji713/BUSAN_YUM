@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors } from "../../Globalstyled";
+import { colors, size } from "../../Globalstyled";
 import { useForm } from "react-hook-form";
 import { FiSearch } from "react-icons/fi";
 import { ErrorMessage } from "../../components/ErrorMessage";
@@ -55,6 +55,60 @@ const Form = styled.form`
       border-radius: 5px;
       background-color: rgba(255, 218, 0, 0.5);
       color: #fff;
+    }
+  }
+  @media screen and (max-width: ${size.size435}) {
+    width: 90%;
+    padding: 15px;
+
+    input {
+      all: unset;
+      font-size: 16px;
+      font-weight: 600;
+      color: ${colors.fontColor_2};
+      &::placeholder {
+        font-family: "Noto Sans KR", sans-serif;
+        color: #939185;
+        font-size: 16px;
+      }
+    }
+    button {
+      all: unset;
+      margin-left: 110px;
+      color: ${colors.point_2};
+      padding: 5px;
+      &:hover {
+        border-radius: 5px;
+        background-color: rgba(255, 218, 0, 0.5);
+        color: #fff;
+      }
+    }
+  }
+  @media screen and (max-width: ${size.size368}) {
+    width: 90%;
+    padding: 15px;
+    input {
+      all: unset;
+      font-size: 16px;
+      font-weight: 600;
+      color: ${colors.fontColor_2};
+      &::placeholder {
+        font-family: "Noto Sans KR", sans-serif;
+        color: #939185;
+        font-size: 15px;
+      }
+    }
+
+    button {
+      all: unset;
+      margin-left: 50px;
+      color: ${colors.point_2};
+      padding: 5px;
+      &:hover {
+        border-radius: 5px;
+        background-color: rgba(255, 218, 0, 0.5);
+        color: #fff;
+      }
     }
   }
 `;
