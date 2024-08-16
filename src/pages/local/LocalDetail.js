@@ -11,11 +11,43 @@ import { useScrollTop } from "../../lib/useScrollTop";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { PageTitle } from "../../components/PageTitle";
 
-const Container = styled.div``;
-const Wrap = styled.div`
+const Container = styled.div`
   max-width: 500px;
   width: 100%;
+  height: 100%;
   margin: 0px auto;
+  position: relative;
+`;
+
+const BackBg = styled.div`
+  display: ${(props) => props.$showAct};
+  width: 100%;
+  height: 1000px;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0px auto;
+  z-index: 11;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+  h3 {
+    font-size: 60px;
+    font-weight: 600;
+    color: #666;
+    text-align: center;
+  }
+  p {
+    font-size: 60px;
+    font-weight: 600;
+    color: #666;
+    margin-top: 10px;
+  }
+`;
+const Wrap = styled.div`
+  width: 100%;
   background-color: #fff;
   font-family: "Noto Sans KR", sans-serif;
   padding: 100px 15px;
@@ -59,9 +91,9 @@ const MainMenu = styled.div`
 export const LocalDetail = () => {
   useScrollTop();
   const [isLoading, setIsLoading] = useState(true);
-  const [foodData, setFoodData] = useState();
   const [scrollData, setScrollData] = useState();
   const [resultData, setResultData] = useState();
+  const [show, setShow] = useState(true);
   const {
     state: { title },
   } = useLocation();
@@ -69,10 +101,6 @@ export const LocalDetail = () => {
   useEffect(() => {
     (async () => {
       try {
-        // const {
-        //   getFoodKr: { item },
-        // } = await foodList();
-
         const getFoodKr = await scrollList(1);
 
         const {
@@ -81,7 +109,6 @@ export const LocalDetail = () => {
         setScrollData(item);
         setResultData(getFoodKr);
 
-        setFoodData(item);
         setIsLoading(false);
       } catch (error) {
         console.log(error);
@@ -89,7 +116,7 @@ export const LocalDetail = () => {
     })();
   }, []);
 
-  console.log(scrollData);
+  // console.log(scrollData);
   // console.log(resultData);
   // console.log(foodData);
 
@@ -111,12 +138,23 @@ export const LocalDetail = () => {
     }
   };
 
+  const closehandler = () => {
+    if (show) {
+      setShow(false);
+    }
+  };
+  console.log(show);
+
   return (
     <>
       {isLoading ? (
         <Loading />
       ) : (
         <Container>
+          <BackBg onClick={closehandler} $showAct={show ? "flex" : "none"}>
+            <h3>스크롤 및 드래그</h3>
+            <p>해주세요</p>
+          </BackBg>
           <Header />
           <PageTitle title={title} />
           {scrollData && (
@@ -152,25 +190,3 @@ export const LocalDetail = () => {
     </>
   );
 };
-
-// <Container>
-//           <Header />
-//           {/* <PageTitle title={localImg.name} /> */}
-//           <Wrap>
-//             <Category># {title}</Category>
-//             {fooData.map((data) => (
-//               <BannerWrap key={data.UC_SEQ}>
-//                 <Link to={`/detail/${data.UC_SEQ}`} state={{ id: data.UC_SEQ }}>
-//                   <img src={data?.MAIN_IMG_NORMAL}></img>
-//                   <Banner>
-//                     <Title>{data.MAIN_TITLE}</Title>
-//                     <MainMenu>{data.RPRSNTV_MENU}</MainMenu>
-//                   </Banner>
-//                 </Link>
-//               </BannerWrap>
-//             ))}
-//           </Wrap>
-//           <Footer />
-
-//           <TopButton />
-//         </Container>
