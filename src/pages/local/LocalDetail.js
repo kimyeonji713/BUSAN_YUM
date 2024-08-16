@@ -1,9 +1,8 @@
-import styled from "styled-components";
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
 import { Loading } from "../../components/Loading";
 import { useEffect, useState } from "react";
-import { foodList, scrollList } from "../../api";
+import { scrollList } from "../../api";
 import { Link, useLocation } from "react-router-dom";
 import { TopButton } from "../home/components/TopButton";
 import { colors } from "../../Globalstyled";
@@ -12,6 +11,39 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import { PageTitle } from "../../components/PageTitle";
 import { CgMouse } from "react-icons/cg";
 import { FaChevronDown } from "react-icons/fa";
+import styled, { keyframes } from "styled-components";
+
+const move = keyframes`
+0%{
+  top: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+}
+50%{
+  top: 50px;
+  
+}
+100%{
+  top: 40px;
+  opacity: 0;
+}
+`;
+
+const move_2 = keyframes`
+0%{
+  top: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+}
+50%{
+  top: 90px;
+  
+}
+100%{
+  top: 80px;
+  opacity: 0;
+}
+`;
 
 const Container = styled.div`
   max-width: 500px;
@@ -38,7 +70,7 @@ const BackBg = styled.div`
 
   .wheel {
     position: absolute;
-    bottom: 15%;
+    bottom: 30%;
     left: 50%;
     transform: translateX(-50%);
     color: #666;
@@ -47,11 +79,33 @@ const BackBg = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    cursor: pointer;
+
     .mouse {
       margin-bottom: 10px;
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
     }
-    .down {
+    .down_1 {
       font-size: 40px;
+      /* animation: 2s 1s infinite; */
+      position: absolute;
+      top: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 1;
+      animation: ${move} 1s 1s infinite;
+    }
+    .down_2 {
+      font-size: 40px;
+      margin-top: -20px;
+      position: absolute;
+      top: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: ${move_2} 1s 2s infinite;
     }
   }
 `;
@@ -64,7 +118,7 @@ const Wrap = styled.div`
 `;
 
 const Category = styled.div`
-  width: 100px;
+  width: 120px;
   height: 30px;
   font-size: 25px;
   font-weight: 600;
@@ -126,7 +180,7 @@ export const LocalDetail = () => {
     })();
   }, []);
 
-  // console.log(scrollData);
+  console.log(scrollData);
   // console.log(resultData);
   // console.log(foodData);
 
@@ -164,8 +218,8 @@ export const LocalDetail = () => {
           <BackBg onClick={closehandler} $showAct={show ? "block" : "none"}>
             <div className="wheel">
               <CgMouse className="mouse" />
-              <FaChevronDown className="down" />
-              <FaChevronDown className="down" />
+              <FaChevronDown className="down_1" />
+              <FaChevronDown className="down_2" />
             </div>
           </BackBg>
           <Header />
