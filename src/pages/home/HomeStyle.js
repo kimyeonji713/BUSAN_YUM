@@ -1,10 +1,9 @@
 import styled from "styled-components";
-import { colors } from "../../Globalstyled";
+import { colors, size } from "../../Globalstyled";
 
 export const Container = styled.section`
   max-width: 500px;
   width: 100%;
-  height: 100vh;
   margin: 0 auto;
   background-color: #fff;
   padding: 100px 0px;
@@ -27,12 +26,26 @@ export const Search = styled.div`
   color: ${colors.fontColor_2};
   a {
     font-family: "Noto Sans KR", sans-serif;
-
     text-decoration: none;
     color: ${colors.fontColor_2};
     opacity: 0.7;
     font-size: 15px;
     font-weight: 600;
+  }
+
+  @media screen and (max-width: ${size.size435}) {
+    width: 88%;
+  }
+  @media screen and (max-width: ${size.size368}) {
+    width: 86%;
+    a {
+      font-family: "Noto Sans KR", sans-serif;
+      text-decoration: none;
+      color: ${colors.fontColor_2};
+      opacity: 0.7;
+      font-size: 14px;
+      font-weight: 600;
+    }
   }
 `;
 
@@ -44,6 +57,12 @@ export const ConWrap = styled.div`
   margin-bottom: 70px;
   .swiper {
     height: 100%;
+  }
+  @media screen and (max-width: ${size.size435}) {
+    height: 230px;
+  }
+  @media screen and (max-width: ${size.size368}) {
+    height: 210px;
   }
 `;
 
@@ -77,6 +96,28 @@ export const Text = styled.div`
     left: 20px;
     color: #fff;
   }
+  @media screen and (max-width: ${size.size435}) {
+    h3 {
+      bottom: 63px;
+      left: 20px;
+    }
+    h4 {
+      bottom: 38px;
+      left: 20px;
+    }
+  }
+  @media screen and (max-width: ${size.size368}) {
+    h3 {
+      font-size: 18px;
+      bottom: 60px;
+      left: 20px;
+    }
+    h4 {
+      font-size: 15px;
+      bottom: 35px;
+      left: 20px;
+    }
+  }
 `;
 
 export const LocalWrap = styled.div`
@@ -99,6 +140,18 @@ export const LocalWrap = styled.div`
     }
   }
   margin-bottom: 70px;
+  @media screen and (max-width: ${size.size435}) {
+    padding: 12px;
+    h3 {
+      font-size: 20px;
+    }
+  }
+  @media screen and (max-width: ${size.size368}) {
+    padding: 12px;
+    h3 {
+      font-size: 19px;
+    }
+  }
 `;
 
 export const LocalCon = styled.div`
@@ -123,5 +176,17 @@ export const Title = styled.div`
     bottom: 0;
     left: 20px;
     color: ${colors.fontColor};
+  }
+  @media screen and (max-width: ${size.size435}) {
+    padding: 12px;
+    h3 {
+      left: 15px;
+    }
+  }
+  @media screen and (max-width: ${size.size368}) {
+    padding: 12px;
+    h3 {
+      left: 15px;
+    }
   }
 `;

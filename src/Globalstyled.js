@@ -20,8 +20,7 @@ export const spacing = {
 };
 
 export const size = {
-  size1024: "1024px",
-  size768: "768px",
+  s500: "500px",
   size435: "435px",
   size368: "368px",
 };
