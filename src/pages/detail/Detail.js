@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { useLocation } from "react-router-dom";
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
-import { colors } from "../../Globalstyled";
+import { colors, size } from "../../Globalstyled";
 import { GiRotaryPhone } from "react-icons/gi";
 import { LuMapPinOff } from "react-icons/lu";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
@@ -24,6 +24,13 @@ const Wrap = styled.div`
   height: 100%;
   font-family: "Noto Sans KR", sans-serif;
   padding-top: 100px;
+
+  @media screen and (max-width: ${size.size435}) {
+    padding-top: 90px;
+  }
+  @media screen and (max-width: ${size.size368}) {
+    padding-top: 85px;
+  }
 `;
 const BannerWrap = styled.div`
   padding: 20px 15px;
@@ -35,6 +42,20 @@ const Title = styled.div`
     font-size: 22px;
     font-weight: 600;
     margin-bottom: 10px;
+  }
+  @media screen and (max-width: ${size.size435}) {
+    h3 {
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+  }
+  @media screen and (max-width: ${size.size368}) {
+    h3 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
   }
 `;
 
@@ -53,16 +74,50 @@ const MainMenu = styled.h4`
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 10px;
+  @media screen and (max-width: ${size.size435}) {
+    h3 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+  }
+  @media screen and (max-width: ${size.size368}) {
+    h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+  }
 `;
 const Desc = styled.p`
   font-size: 16px;
   line-height: 18px;
   margin-bottom: 10px;
+  @media screen and (max-width: ${size.size435}) {
+    font-size: 16px;
+    line-height: 18px;
+    margin-bottom: 10px;
+  }
+  @media screen and (max-width: ${size.size368}) {
+    font-size: 15px;
+    line-height: 18px;
+    margin-bottom: 10px;
+  }
 `;
 const Order = styled.p`
   font-size: 16px;
   margin-bottom: 10px;
   line-height: 18px;
+  @media screen and (max-width: ${size.size435}) {
+    font-size: 16px;
+    line-height: 18px;
+    margin-bottom: 10px;
+  }
+  @media screen and (max-width: ${size.size368}) {
+    font-size: 15px;
+    line-height: 18px;
+    margin-bottom: 10px;
+  }
 `;
 const Tel = styled.p`
   display: flex;
@@ -86,6 +141,12 @@ const Map = styled.div`
   font-size: 60px;
   border: 1px solid ${colors.fontColor_3};
   margin-top: 40px;
+  @media screen and (max-width: ${size.size435}) {
+    margin-top: 30px;
+  }
+  @media screen and (max-width: ${size.size368}) {
+    margin-top: 30px;
+  }
 `;
 export const Detail = () => {
   useScrollTop();
