@@ -6,6 +6,7 @@ import { colors, size } from "../Globalstyled";
 import { ErrorMessage } from "../components/ErrorMessage";
 import { useScrollTop } from "../lib/useScrollTop";
 import { useState } from "react";
+import { PageTitle } from "../components/PageTitle";
 
 const Container = styled.div`
   max-width: 500px;
@@ -137,6 +138,8 @@ export const Login = () => {
 
   return (
     <Container>
+      <PageTitle title="로그인" />
+
       <Form onSubmit={handleSubmit(loginHandler)}>
         <Link to={routes.main}>
           <img src={imgUrl} alt="logo" />

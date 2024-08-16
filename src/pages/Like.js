@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { routes } from "../routes";
 import { colors, size } from "../Globalstyled";
 import { IoHeartDislikeOutline } from "react-icons/io5";
+import { PageTitle } from "../components/PageTitle";
 
 const Container = styled.div`
   max-width: 500px;
@@ -84,6 +85,8 @@ export const Like = () => {
   return (
     <Container>
       <Header />
+      <PageTitle title="좋아요" />
+
       <Wrap>
         <IoHeartDislikeOutline className="icon" />
         <p>로그인 후, 나의 찜 목록을 확인해보세요.</p>

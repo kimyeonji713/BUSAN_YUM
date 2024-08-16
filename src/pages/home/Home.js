@@ -24,6 +24,7 @@ import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import { TopButton } from "./components/TopButton";
 import styled from "styled-components";
+import { PageTitle } from "../../components/PageTitle";
 
 const ImgWrap = styled.div`
   a {
@@ -166,6 +167,8 @@ export const Home = () => {
       ) : (
         <Container>
           <Header />
+          <PageTitle title="홈" />
+
           <Wrap>
             <Search>
               <Link to={routes.search}>어떤 맛집을 찾으시나요?</Link>

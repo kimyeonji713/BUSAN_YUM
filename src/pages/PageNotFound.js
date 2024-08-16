@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { colors } from "../Globalstyled";
 import { Link } from "react-router-dom";
 import { routes } from "../routes";
+import { PageTitle } from "../components/PageTitle";
 
 const Container = styled.div`
   max-width: 500px;
@@ -36,6 +37,8 @@ const Text = styled.div`
 export const PageNotFound = () => {
   return (
     <Container>
+      <PageTitle title="404" />
+
       <Text>
         <h3>
           4

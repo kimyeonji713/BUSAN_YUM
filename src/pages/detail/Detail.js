@@ -11,6 +11,7 @@ import { LuMapPinOff } from "react-icons/lu";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 import { useScrollTop } from "../../lib/useScrollTop";
 import { TopButton } from "../home/components/TopButton";
+import { PageTitle } from "../../components/PageTitle";
 
 const Container = styled.div`
   max-width: 500px;
@@ -197,6 +198,7 @@ export const Detail = () => {
           <Header />
           {idData?.map((data) => (
             <Wrap key={data.UC_SEQ}>
+              <PageTitle title={data.MAIN_TITLE} />
               <img src={data.MAIN_IMG_NORMAL} />
               <BannerWrap>
                 <Title>
