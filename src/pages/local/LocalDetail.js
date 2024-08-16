@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { scrollList } from "../../api";
 import { Link, useLocation } from "react-router-dom";
 import { TopButton } from "../home/components/TopButton";
-import { colors } from "../../Globalstyled";
+import { colors, size } from "../../Globalstyled";
 import { useScrollTop } from "../../lib/useScrollTop";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { PageTitle } from "../../components/PageTitle";
@@ -134,6 +134,12 @@ const BannerWrap = styled.div`
   margin-bottom: 30px;
   border-radius: 20px;
   overflow: hidden;
+  @media screen and (max-width: ${size.size435}) {
+    height: 250px;
+  }
+  @media screen and (max-width: ${size.size368}) {
+    height: 230px;
+  }
 `;
 const Banner = styled.div`
   padding: 10px;
