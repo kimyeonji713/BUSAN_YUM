@@ -10,6 +10,8 @@ import { colors } from "../../Globalstyled";
 import { useScrollTop } from "../../lib/useScrollTop";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { PageTitle } from "../../components/PageTitle";
+import { CgMouse } from "react-icons/cg";
+import { FaChevronDown } from "react-icons/fa";
 
 const Container = styled.div`
   max-width: 500px;
@@ -33,19 +35,27 @@ const BackBg = styled.div`
   align-items: center;
   flex-direction: column;
   cursor: pointer;
-  h3 {
-    font-size: 60px;
-    font-weight: 600;
+
+  .wheel {
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
     color: #666;
-    text-align: center;
-  }
-  p {
     font-size: 60px;
-    font-weight: 600;
-    color: #666;
-    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .mouse {
+      margin-bottom: 10px;
+    }
+    .down {
+      font-size: 40px;
+    }
   }
 `;
+
 const Wrap = styled.div`
   width: 100%;
   background-color: #fff;
@@ -151,9 +161,12 @@ export const LocalDetail = () => {
         <Loading />
       ) : (
         <Container>
-          <BackBg onClick={closehandler} $showAct={show ? "flex" : "none"}>
-            <h3>스크롤 및 드래그</h3>
-            <p>해주세요</p>
+          <BackBg onClick={closehandler} $showAct={show ? "block" : "none"}>
+            <div className="wheel">
+              <CgMouse className="mouse" />
+              <FaChevronDown className="down" />
+              <FaChevronDown className="down" />
+            </div>
           </BackBg>
           <Header />
           <PageTitle title={title} />
