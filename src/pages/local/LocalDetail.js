@@ -8,12 +8,13 @@ import { Link, useLocation } from "react-router-dom";
 import { TopButton } from "../home/components/TopButton";
 import { colors } from "../../Globalstyled";
 import { useScrollTop } from "../../lib/useScrollTop";
+import InfiniteScroll from "react-infinite-scroll-component";
+import { PageTitle } from "../../components/PageTitle";
 
 const Container = styled.div``;
 const Wrap = styled.div`
   max-width: 500px;
   width: 100%;
-  height: 150vh;
   margin: 0px auto;
   background-color: #fff;
   font-family: "Noto Sans KR", sans-serif;
@@ -54,20 +55,6 @@ const MainMenu = styled.div`
   font-size: 15px;
   font-weight: 600;
 `;
-const Desc = styled.div`
-  font-size: 15px;
-  font-weight: 500;
-  margin-bottom: 5px;
-  line-height: 16px;
-`;
-const Tel = styled.div`
-  font-size: 156x;
-  margin-bottom: 5px;
-`;
-const Order = styled.div`
-  font-size: 16px;
-  margin-bottom: 5px;
-`;
 
 export const LocalDetail = () => {
   useScrollTop();
@@ -82,13 +69,17 @@ export const LocalDetail = () => {
   useEffect(() => {
     (async () => {
       try {
+        // const {
+        //   getFoodKr: { item },
+        // } = await foodList();
+
+        const getFoodKr = await scrollList(1);
+
         const {
           getFoodKr: { item },
-        } = await foodList();
-
-        // const getFoodKr = await scrollList();
-        // setScrollData(getFoodKr);
-        // setResultData(getFoodKr.item);
+        } = await scrollList(1);
+        setScrollData(item);
+        setResultData(getFoodKr);
 
         setFoodData(item);
         setIsLoading(false);
@@ -98,25 +89,27 @@ export const LocalDetail = () => {
     })();
   }, []);
 
-  // console.log(scrollData);
+  console.log(scrollData);
+  // console.log(resultData);
   // console.log(foodData);
 
-  const fooData = foodData?.filter((data) => data.GUGUN_NM === title);
+  const fooData = scrollData?.filter((data) => data.GUGUN_NM === title);
 
-  // const fetchData = async () => {
-  //   try {
-  //     let page = (resultData.page += 1);
-  //     if (resultData.page <= resultData.totalCount) {
-  //       const {
-  //   getFoodKr: { item },
-  // } = await scrollList(page);
-  //       setScrollData(scrollData.concat(item));
-  //     } else {
-  //     }
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
+  const fetchData = async () => {
+    try {
+      let page = (resultData.getFoodKr.pageNo += 1);
+      if (resultData.getFoodKr.pageNo <= resultData.getFoodKr.totalCount) {
+        const {
+          getFoodKr: { item },
+        } = await scrollList(page);
+        console.log(page);
+        setScrollData(scrollData.concat(item));
+      } else {
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <>
@@ -125,21 +118,32 @@ export const LocalDetail = () => {
       ) : (
         <Container>
           <Header />
-          {/* <PageTitle title={localImg.name} /> */}
-          <Wrap>
-            <Category># {title}</Category>
-            {fooData.map((data) => (
-              <BannerWrap key={data.UC_SEQ}>
-                <Link to={`/detail/${data.UC_SEQ}`} state={{ id: data.UC_SEQ }}>
-                  <img src={data?.MAIN_IMG_NORMAL}></img>
-                  <Banner>
-                    <Title>{data.MAIN_TITLE}</Title>
-                    <MainMenu>{data.RPRSNTV_MENU}</MainMenu>
-                  </Banner>
-                </Link>
-              </BannerWrap>
-            ))}
-          </Wrap>
+          <PageTitle title={title} />
+          {scrollData && (
+            <InfiniteScroll
+              dataLength={scrollData.length}
+              next={fetchData}
+              hasMore={true}
+            >
+              <Wrap>
+                <Category># {title}</Category>
+                {fooData.map((data) => (
+                  <BannerWrap key={data.UC_SEQ}>
+                    <Link
+                      to={`/detail/${data.UC_SEQ}`}
+                      state={{ id: data.UC_SEQ }}
+                    >
+                      <img src={data?.MAIN_IMG_NORMAL}></img>
+                      <Banner>
+                        <Title>{data.MAIN_TITLE}</Title>
+                        <MainMenu>{data.RPRSNTV_MENU}</MainMenu>
+                      </Banner>
+                    </Link>
+                  </BannerWrap>
+                ))}
+              </Wrap>
+            </InfiniteScroll>
+          )}
           <Footer />
 
           <TopButton />
@@ -148,13 +152,25 @@ export const LocalDetail = () => {
     </>
   );
 };
-// {scrollData && (
-//   <InfiniteScroll
-//     dataLength={scrollData.length}
-//     next={fetchData}
-//     // () 붙이면 렌더링 되기전에 다 나옴 단, 매개변수 사용시에는 붙혀주기
-//     hasMore={true}
-//   >
 
-//   </InfiniteScroll>
-// )}
+// <Container>
+//           <Header />
+//           {/* <PageTitle title={localImg.name} /> */}
+//           <Wrap>
+//             <Category># {title}</Category>
+//             {fooData.map((data) => (
+//               <BannerWrap key={data.UC_SEQ}>
+//                 <Link to={`/detail/${data.UC_SEQ}`} state={{ id: data.UC_SEQ }}>
+//                   <img src={data?.MAIN_IMG_NORMAL}></img>
+//                   <Banner>
+//                     <Title>{data.MAIN_TITLE}</Title>
+//                     <MainMenu>{data.RPRSNTV_MENU}</MainMenu>
+//                   </Banner>
+//                 </Link>
+//               </BannerWrap>
+//             ))}
+//           </Wrap>
+//           <Footer />
+
+//           <TopButton />
+//         </Container>

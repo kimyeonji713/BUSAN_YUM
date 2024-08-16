@@ -180,7 +180,7 @@ export const Home = () => {
                 pagination={{ clickable: true }}
                 autoplay={{ delay: 3000 }}
               >
-                {foodData?.map((data, index) => (
+                {foodData?.map((data) => (
                   <SwiperSlide key={data.UC_SEQ}>
                     <ImgWrap>
                       <Link
@@ -190,7 +190,7 @@ export const Home = () => {
                         <img src={data.MAIN_IMG_NORMAL} alt="음식" />
 
                         <Text>
-                          <h3>올해 추천 Top {index + 1}</h3>
+                          <h3>오늘 메뉴 이건 어떠세요?</h3>
                           <h4>{data.MAIN_TITLE}</h4>
                         </Text>
                       </Link>
@@ -228,7 +228,3 @@ export const Home = () => {
     </>
   );
 };
-
-<SwiperSlide>
-  <Link></Link>
-</SwiperSlide>;

@@ -5,7 +5,7 @@ import { routes } from "../routes";
 const Container = styled.footer`
   max-width: 500px;
   width: 100%;
-  height: 100vh;
+  /* height: 100vh; */
   margin: 0px auto;
 `;
 const ConWrap = styled.div`

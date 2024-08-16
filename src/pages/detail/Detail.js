@@ -10,6 +10,7 @@ import { GiRotaryPhone } from "react-icons/gi";
 import { LuMapPinOff } from "react-icons/lu";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 import { useScrollTop } from "../../lib/useScrollTop";
+import { TopButton } from "../home/components/TopButton";
 
 const Container = styled.div`
   max-width: 500px;
@@ -159,6 +160,7 @@ export const Detail = () => {
               </BannerWrap>
             </Wrap>
           ))}
+          <TopButton />
           <Footer />
         </Container>
       )}

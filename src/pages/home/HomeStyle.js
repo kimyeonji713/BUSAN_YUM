@@ -38,7 +38,7 @@ export const Search = styled.div`
 
 export const ConWrap = styled.div`
   width: 100%;
-  height: 280px;
+  height: 250px;
   overflow: hidden;
   position: relative;
   margin-bottom: 70px;
@@ -81,7 +81,7 @@ export const Text = styled.div`
 
 export const LocalWrap = styled.div`
   width: 100%;
-  height: 250px;
+  height: 280px;
   overflow: hidden;
   padding: 15px;
   h3 {

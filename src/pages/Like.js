@@ -13,9 +13,11 @@ const Container = styled.div`
 const Wrap = styled.div``;
 
 export const Like = () => {
-  <Container>
-    <Header />
-    <Wrap>좋아요</Wrap>
-    <Footer />
-  </Container>;
+  return (
+    <Container>
+      <Header />
+      <Wrap>좋아요</Wrap>
+      <Footer />
+    </Container>
+  );
 };

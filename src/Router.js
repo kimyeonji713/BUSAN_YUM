@@ -22,6 +22,7 @@ const Router = () => {
         <Route path={routes.signup} element={<SignUp />} />
         <Route path={routes.local} element={<LocalDetail />} />
         <Route path={routes.like} element={<Like />} />
+
         <Route path="/*" element={<PageNotFound />} />
       </Routes>
     </HashRouter>
