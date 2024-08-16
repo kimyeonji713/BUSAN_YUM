@@ -18,6 +18,7 @@ const Container = styled.div`
 `;
 
 const Form = styled.div`
+  margin-top: 150px;
   img {
     transform: translateX(125px);
     width: 50%;
@@ -60,6 +61,33 @@ const Form = styled.div`
       font-size: 16px;
       margin-left: 15px;
     }
+  }
+`;
+
+const Logo = styled.h3`
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 40px;
+  font-weight: 900;
+  a {
+    font-family: "Jua", sans-serif;
+    padding: 0px 20px;
+    text-align: center;
+    color: ${colors.point_1};
+  }
+  span {
+    margin-left: 5px;
+    color: ${colors.point_2};
+  }
+  @media screen and (max-width: ${size.size435}) {
+    font-size: 40px;
+    font-weight: 900;
+  }
+  @media screen and (max-width: ${size.size368}) {
+    font-size: 39px;
+    font-weight: 900;
   }
 `;
 
@@ -134,9 +162,11 @@ export const SignUp = () => {
       <PageTitle title="회원가입" />
 
       <Form onSubmit={handleSubmit(loginHandler)}>
-        <Link to={routes.main}>
-          <img src={imgUrl} alt="logo" />
-        </Link>
+        <Logo>
+          <Link to={routes.main}>
+            부산<span>YUM</span>
+          </Link>
+        </Logo>
 
         <input
           {...register("username", {

@@ -10,20 +10,16 @@ import { PageTitle } from "../components/PageTitle";
 
 const Container = styled.div`
   max-width: 500px;
-  margin: 55px auto;
+  margin: 100px auto;
   width: 100%;
+  height: 800px;
   background-color: #f5f7f8;
   padding: 80px 0;
   border-radius: 10px;
 `;
 
 const Form = styled.form`
-  img {
-    transform: translateX(125px);
-    width: 50%;
-    margin-bottom: 30px;
-  }
-
+  margin-top: 180px;
   input {
     all: unset;
     width: 85%;
@@ -62,6 +58,33 @@ const Form = styled.form`
       font-size: 16px;
       margin-left: 15px;
     }
+  }
+`;
+
+const Logo = styled.h3`
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 40px;
+  font-weight: 900;
+  a {
+    font-family: "Jua", sans-serif;
+    padding: 0px 20px;
+    text-align: center;
+    color: ${colors.point_1};
+  }
+  span {
+    margin-left: 5px;
+    color: ${colors.point_2};
+  }
+  @media screen and (max-width: ${size.size435}) {
+    font-size: 40px;
+    font-weight: 900;
+  }
+  @media screen and (max-width: ${size.size368}) {
+    font-size: 39px;
+    font-weight: 900;
   }
 `;
 
@@ -141,9 +164,11 @@ export const Login = () => {
       <PageTitle title="로그인" />
 
       <Form onSubmit={handleSubmit(loginHandler)}>
-        <Link to={routes.main}>
-          <img src={imgUrl} alt="logo" />
-        </Link>
+        <Logo>
+          <Link to={routes.main}>
+            부산<span>YUM</span>
+          </Link>
+        </Logo>
 
         <input
           {...register("username", {

@@ -13,6 +13,7 @@ const Container = styled.div`
   height: 100vh;
   margin: 20px auto;
   background: url(${(props) => props.$BgUrl}) no-repeat center / cover;
+  position: relative;
 `;
 
 const Wrap = styled.div`
@@ -24,30 +25,27 @@ const Wrap = styled.div`
     rgba(180, 180, 180, 0.3) 73%,
     rgba(255, 255, 255, 0.5) 100%
   );
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-
-  img {
-    width: 55%;
-    margin-top: -400px;
-  }
+  position: absolute;
+  top: 0;
+  left: 0;
 `;
 
 const Title = styled.h3`
   font-family: "Jua", sans-serif;
-  padding: 120px 20px;
+  padding: 0px 20px;
   text-align: center;
   color: ${colors.point_1};
-  margin-top: -130px;
-  font-size: 35px;
+  font-size: 40px;
   font-weight: 900;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+
   span {
     margin-left: 5px;
     color: ${colors.point_2};
   }
-  margin-bottom: -20px;
 `;
 const Button = styled.button`
   all: unset;
@@ -55,9 +53,12 @@ const Button = styled.button`
   height: 50px;
   background-color: ${colors.point_2};
   text-align: center;
-  margin-top: -60px;
   border-radius: 15px;
   opacity: 0.6;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
   cursor: pointer;
   a {
     text-decoration: none;
@@ -104,7 +105,6 @@ const mImg = [
 ];
 export const MainPage = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const imgUrl = "/img/logo.png";
 
   mainImg();
   useEffect(() => {
@@ -132,7 +132,6 @@ export const MainPage = () => {
       ) : (
         <Container $BgUrl={randomImg?.url}>
           <Wrap>
-            <img src={imgUrl} alt="logo"></img>
             <Title>
               부산<span>YUM</span>
             </Title>
