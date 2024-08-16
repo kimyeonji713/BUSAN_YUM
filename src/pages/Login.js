@@ -2,16 +2,15 @@ import styled from "styled-components";
 import { Link, useNavigate } from "react-router-dom";
 import { routes } from "../routes";
 import { useForm } from "react-hook-form";
-import { colors } from "../Globalstyled";
+import { colors, size } from "../Globalstyled";
 import { ErrorMessage } from "../components/ErrorMessage";
 import { useScrollTop } from "../lib/useScrollTop";
 import { useState } from "react";
 
 const Container = styled.div`
   max-width: 500px;
-  margin: 100px auto;
+  margin: 55px auto;
   width: 100%;
-  height: 800px;
   background-color: #f5f7f8;
   padding: 80px 0;
   border-radius: 10px;
@@ -37,6 +36,32 @@ const Form = styled.form`
   .password {
     margin-top: 15px;
   }
+  @media screen and (max-width: ${size.size435}) {
+    img {
+      transform: translateX(125px);
+      width: 45%;
+      margin-bottom: 30px;
+    }
+
+    input {
+      padding: 10px 15px;
+      font-size: 16px;
+      margin-left: 15px;
+    }
+  }
+  @media screen and (max-width: ${size.size368}) {
+    img {
+      transform: translateX(115px);
+      width: 40%;
+      margin-bottom: 30px;
+    }
+
+    input {
+      padding: 10px;
+      font-size: 16px;
+      margin-left: 15px;
+    }
+  }
 `;
 
 const Button = styled.button`
@@ -44,7 +69,6 @@ const Button = styled.button`
   width: 85%;
   height: 50px;
   padding: 5px 10px;
-
   border-radius: 5px;
   text-align: center;
   margin: 100px 0 100px 25px;
@@ -54,6 +78,18 @@ const Button = styled.button`
   color: #fff;
   font-size: 18px;
   font-weight: 600;
+  @media screen and (max-width: ${size.size435}) {
+    width: 85%;
+    height: 50px;
+    padding: 5px 8px;
+    margin: 100px 0 100px 25px;
+  }
+  @media screen and (max-width: ${size.size368}) {
+    width: 85%;
+    height: 45px;
+    padding: 5px;
+    margin: 80px 0 80px 25px;
+  }
 `;
 
 const Text = styled.div`
@@ -65,6 +101,12 @@ const Text = styled.div`
   a {
     text-decoration: underline;
     opacity: 0.7;
+  }
+  @media screen and (max-width: ${size.size435}) {
+    font-size: 14px;
+  }
+  @media screen and (max-width: ${size.size368}) {
+    font-size: 13px;
   }
 `;
 
