@@ -181,7 +181,6 @@ export const Home = () => {
             <LocalWrap>
               <h3>어디로 가볼까요?</h3>
               <LocalCon>
-                {console.log(localImg)}
                 <Swiper className="local" {...params} loop={true}>
                   {localImg?.map((data) => (
                     <SwiperSlide key={data.id}>
