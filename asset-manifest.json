@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/BUSAN_YUM/static/css/main.cecbfa92.css",
-    "main.js": "/BUSAN_YUM/static/js/main.f3cb0e7c.js",
+    "main.js": "/BUSAN_YUM/static/js/main.f19a85f0.js",
     "index.html": "/BUSAN_YUM/index.html",
     "main.cecbfa92.css.map": "/BUSAN_YUM/static/css/main.cecbfa92.css.map",
-    "main.f3cb0e7c.js.map": "/BUSAN_YUM/static/js/main.f3cb0e7c.js.map"
+    "main.f19a85f0.js.map": "/BUSAN_YUM/static/js/main.f19a85f0.js.map"
   },
   "entrypoints": [
     "static/css/main.cecbfa92.css",
-    "static/js/main.f3cb0e7c.js"
+    "static/js/main.f19a85f0.js"
   ]
 }
