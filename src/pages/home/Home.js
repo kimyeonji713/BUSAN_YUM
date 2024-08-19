@@ -131,7 +131,6 @@ export const Home = () => {
           getFoodKr: { item },
         } = await foodList();
 
-        // console.log(item);
         setFoodData(item);
         setIsLoading(false);
       } catch (error) {
@@ -139,8 +138,6 @@ export const Home = () => {
       }
     })();
   }, []);
-
-  // console.log(foodData);
 
   const params = {
     slidesPerView: 3.3,

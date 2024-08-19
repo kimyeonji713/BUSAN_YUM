@@ -186,8 +186,6 @@ export const Detail = () => {
     })();
   }, []);
 
-  console.log(foodData);
-
   const idData = foodData?.filter((data) => data.UC_SEQ === id);
   return (
     <>

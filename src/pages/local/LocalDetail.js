@@ -53,63 +53,6 @@ const Container = styled.div`
   position: relative;
 `;
 
-const BackBg = styled.div`
-  display: ${(props) => props.$showAct};
-  width: 100%;
-  height: 1000px;
-  background-color: rgba(0, 0, 0, 0.8);
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin: 0px auto;
-  z-index: 11;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  cursor: pointer;
-
-  .wheel {
-    position: absolute;
-    bottom: 30%;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #666;
-    font-size: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    cursor: pointer;
-
-    .mouse {
-      margin-bottom: 10px;
-      position: absolute;
-      top: -20px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-    .down_1 {
-      font-size: 40px;
-      /* animation: 2s 1s infinite; */
-      position: absolute;
-      top: 40px;
-      left: 50%;
-      transform: translateX(-50%);
-      opacity: 1;
-      animation: ${move} 1s 1s infinite;
-    }
-    .down_2 {
-      font-size: 40px;
-      margin-top: -20px;
-      position: absolute;
-      top: 80px;
-      left: 50%;
-      transform: translateX(-50%);
-      animation: ${move_2} 1s 2s infinite;
-    }
-  }
-`;
-
 const Wrap = styled.div`
   width: 100%;
   background-color: #fff;
@@ -186,10 +129,6 @@ export const LocalDetail = () => {
     })();
   }, []);
 
-  console.log(scrollData);
-  // console.log(resultData);
-  // console.log(foodData);
-
   const fooData = scrollData?.filter((data) => data.GUGUN_NM === title);
 
   const fetchData = async () => {
@@ -221,13 +160,6 @@ export const LocalDetail = () => {
         <Loading />
       ) : (
         <Container>
-          <BackBg onClick={closehandler} $showAct={show ? "block" : "none"}>
-            <div className="wheel">
-              <CgMouse className="mouse" />
-              <FaChevronDown className="down_1" />
-              <FaChevronDown className="down_2" />
-            </div>
-          </BackBg>
           <Header />
           <PageTitle title={title} />
           {scrollData && (

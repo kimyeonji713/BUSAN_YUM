@@ -119,11 +119,8 @@ export const MainPage = () => {
   }, []);
 
   const number = Math.floor(Math.random() * 5);
-  // console.log(number);
 
   const randomImg = mImg[number];
-
-  // console.log(randomImg);
 
   return (
     <>
