@@ -6,6 +6,7 @@ import { routes } from "../../routes";
 import {
   Container,
   ConWrap,
+  ImgWrap,
   LocalCon,
   LocalWrap,
   Search,
@@ -25,16 +26,6 @@ import "swiper/css/autoplay";
 import { TopButton } from "./components/TopButton";
 import styled from "styled-components";
 import { PageTitle } from "../../components/PageTitle";
-
-const ImgWrap = styled.div`
-  a {
-    img {
-      display: block;
-      width: 100%;
-      height: 280px;
-    }
-  }
-`;
 
 const localImg = [
   {
@@ -142,19 +133,6 @@ export const Home = () => {
   const params = {
     slidesPerView: 3.3,
     spaceBetween: 20,
-    breakpoints: {
-      500: {
-        slidesPerView: 3.3,
-      },
-      430: {
-        slidesPerView: 2.5,
-        spaceBetween: 15,
-      },
-      368: {
-        slidesPerView: 2.3,
-        spaceBetween: 10,
-      },
-    },
   };
 
   return (
@@ -203,7 +181,8 @@ export const Home = () => {
             <LocalWrap>
               <h3>어디로 가볼까요?</h3>
               <LocalCon>
-                <Swiper className="local" {...params}>
+                {console.log(localImg)}
+                <Swiper className="local" {...params} loop={true}>
                   {localImg?.map((data) => (
                     <SwiperSlide key={data.id}>
                       <Link

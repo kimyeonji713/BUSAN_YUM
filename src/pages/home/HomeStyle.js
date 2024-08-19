@@ -66,6 +66,17 @@ export const ConWrap = styled.div`
   }
 `;
 
+export const ImgWrap = styled.div`
+  width: 500px;
+  a {
+    img {
+      display: block;
+      width: 100%;
+      height: 280px;
+    }
+  }
+`;
+
 export const Text = styled.div`
   width: 100%;
   height: 100%;
